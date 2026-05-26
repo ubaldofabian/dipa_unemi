@@ -1,0 +1,187 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                      PASO A PASO - CONFIGURACIÓN FINAL                    ║
+║                                                                            ║
+║   Tu carpeta: C:\Users\Admin\ACADEMICO\unemi-innovacion                   ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+📥 PASO 1: DESCARGAR EL ARCHIVO index.html
+═════════════════════════════════════════════════════════════════════════════
+
+1. Ve a la sección de descargas donde están los archivos que creé
+2. Descarga: "index.html"
+3. Guárdalo en tu carpeta: C:\Users\Admin\ACADEMICO\unemi-innovacion
+
+
+📥 PASO 2: COPIAR TU VIDEO
+═════════════════════════════════════════════════════════════════════════════
+
+1. Encuentra tu video descargado (puede estar en Descargas)
+2. Cópialo (Ctrl+C)
+3. Ve a tu carpeta: C:\Users\Admin\ACADEMICO\unemi-innovacion
+4. Pégalo ahí (Ctrl+V)
+
+IMPORTANTE: Recuerda el NOMBRE EXACTO de tu video
+Ejemplos:
+  ✓ video.mp4
+  ✓ presentacion.mp4
+  ✓ demo.mp4
+
+
+📝 PASO 3: ACTUALIZAR EL NOMBRE DEL VIDEO EN HTML
+═════════════════════════════════════════════════════════════════════════════
+
+Si tu video se llama DIFERENTE a "tu-video.mp4", debes actualizar el HTML:
+
+1. Abre la carpeta: C:\Users\Admin\ACADEMICO\unemi-innovacion
+2. Haz clic derecho en "index.html"
+3. Selecciona: "Abrir con" → "Bloc de notas" o "VS Code"
+
+Busca esta línea (aparece 2 veces):
+┌─────────────────────────────────────────────────────┐
+│ <source src="tu-video.mp4" type="video/mp4">       │
+└─────────────────────────────────────────────────────┘
+
+Cámbiala por el nombre REAL de tu video:
+┌─────────────────────────────────────────────────────┐
+│ <source src="mi-video.mp4" type="video/mp4">        │
+└─────────────────────────────────────────────────────┘
+
+O si tu video se llama "presentacion.mp4":
+┌─────────────────────────────────────────────────────┐
+│ <source src="presentacion.mp4" type="video/mp4">    │
+└─────────────────────────────────────────────────────┘
+
+IMPORTANTE: Asegúrate de que el nombre COINCIDA exactamente
+(mayúsculas, minúsculas, puntos, todo debe ser igual)
+
+
+🎬 PASO 4: ABRIR LA PÁGINA EN EL NAVEGADOR
+═════════════════════════════════════════════════════════════════════════════
+
+1. Ve a tu carpeta: C:\Users\Admin\ACADEMICO\unemi-innovacion
+2. Haz DOBLE CLIC en "index.html"
+3. Se abrirá en tu navegador automáticamente
+
+ALTERNATIVA: Arrastra el archivo al navegador
+
+
+✅ PASO 5: VERIFICAR QUE FUNCIONA
+═════════════════════════════════════════════════════════════════════════════
+
+Deberías ver:
+
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│    [Video reproduciéndose de fondo]                │
+│    [sin sonido]                                    │
+│                                                     │
+│    Título: "Dirección de Innovación de             │
+│    Procesos Académicos"                            │
+│                                                     │
+│    Subtítulo: "Transformamos los procesos..."      │
+│                                                     │
+│              [🔘 BOTÓN PLAY]                       │
+│           (círculo blanco)                         │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+
+Si ves esto: ✅ ¡Felicidades! Funciona correctamente
+
+
+🧪 PASO 6: PROBAR LA FUNCIONALIDAD
+═════════════════════════════════════════════════════════════════════════════
+
+1. Haz CLIC en el botón de play (círculo blanco)
+
+   Deberías ver:
+   ┌─────────────────────────────────────────────────────┐
+   │      VIDEO MAXIMIZADO (pantalla completa)          │
+   │                                                     │
+   │      Controles de video:                           │
+   │      Play | Pausa | Línea de progreso | Volumen   │
+   │      Pantalla completa | Más opciones             │
+   │                                                     │
+   │  [X] ← Botón para cerrar (arriba a la derecha)     │
+   └─────────────────────────────────────────────────────┘
+
+2. Deberías ESCUCHAR el audio del video
+
+3. Prueba los controles (volumen, pausa, etc.)
+
+4. Cierra el video de UNA de estas 3 formas:
+   • Haz clic en la X (arriba a la derecha)
+   • Presiona la tecla ESC
+   • Haz clic FUERA del video (en la zona negra)
+
+   Deberías volver a la página principal
+
+5. Redimensiona la ventana para ver que es "responsive"
+   (se adapta a diferentes tamaños de pantalla)
+
+
+❌ SI ALGO NO FUNCIONA
+═════════════════════════════════════════════════════════════════════════════
+
+PROBLEMA: El video no aparece
+
+SOLUCIONES:
+☐ ¿El archivo de video está en la MISMA carpeta que index.html?
+☐ ¿El nombre en el HTML coincide EXACTAMENTE con el nombre del video?
+☐ ¿Verificaste mayúsculas/minúsculas? (video.mp4 NO es lo mismo que Video.mp4)
+
+Intenta: Abre la consola del navegador (F12) y mira si hay errores
+
+
+PROBLEMA: El video aparece pero está cortado o muy pequeño
+
+SOLUCIONES:
+☐ Aumenta la altura del video:
+   Busca: .video-hero { height: 600px; }
+   Cambia a: .video-hero { height: 800px; }
+   (o un valor más grande)
+
+☐ O cambia cómo se ajusta el video:
+   Busca: object-fit: cover;
+   Cambia a: object-fit: contain;
+
+
+PROBLEMA: No se escucha el audio
+
+☐ El video de fondo está MUTED (sin sonido) - esto es NORMAL
+☐ El audio aparece cuando amplías el video (haces clic en play)
+☐ Verifica que tu video TENGA audio
+
+
+🎬 PASO 7: MOSTRAR A TU JEFE
+═════════════════════════════════════════════════════════════════════════════
+
+Abre index.html y muestra:
+
+✓ El video de fondo sin sonido
+✓ Clic en el botón de play
+✓ Video ampliado con sonido
+✓ Controles funcionando
+✓ Cierre con X/ESC
+✓ Responsive (redimensionar ventana)
+
+
+📦 CUANDO APRUEBE TU JEFE
+═════════════════════════════════════════════════════════════════════════════
+
+Para implementarlo en la web real de UNEMI:
+
+1. Accede a: www.unemi.edu.ec/wp-admin
+2. Ve a: Multimedia → Añadir nuevo
+3. Sube tu video
+4. Copia la URL del video
+5. Ve a: Páginas → Editar la página
+6. En WPBakery, añade un elemento "HTML personalizado"
+7. Copia el código de index.html
+8. Cambia la ruta del video por la URL que copiaste
+9. Publica
+
+
+═════════════════════════════════════════════════════════════════════════════
+                          ¡LISTO PARA COMENZAR!
+═════════════════════════════════════════════════════════════════════════════

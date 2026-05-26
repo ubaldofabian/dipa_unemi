@@ -1,0 +1,163 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                     INSTRUCCIONES RÁPIDAS - VIDEO DE FONDO                ║
+║                                                                           ║
+║               Dirección de Innovación de Procesos Académicos - UNEMI      ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+📋 ARCHIVOS INCLUIDOS:
+═════════════════════════════════════════════════════════════════════════════
+
+✓ index.html               → Página principal con video de fondo
+✓ GUIA_VIDEO_FONDO.docx    → Guía completa en Word (imprimible)
+✓ README.txt               → Instrucciones detalladas
+✓ INSTRUCCIONES_RAPIDAS.txt → Este archivo
+
+
+🚀 INICIO RÁPIDO (3 PASOS):
+═════════════════════════════════════════════════════════════════════════════
+
+1️⃣  PREPARAR CARPETA DE PROYECTO
+   • Crea una carpeta: "unemi-innovacion"
+   • Copia index.html en esa carpeta
+   • Copia tu video en la MISMA carpeta
+
+2️⃣  RENOMBRAR VIDEO (SI ES NECESARIO)
+   • Si tu video se llama "video.mp4" o "demo.mp4"
+   • Abre index.html con Notepad, VS Code o similar
+   • Busca: <source src="tu-video.mp4"
+   • Cambia "tu-video.mp4" por el nombre real
+   • Guarda el archivo
+
+3️⃣  ABRIR EN NAVEGADOR
+   • Haz doble clic en index.html
+   • O arrastra el archivo al navegador
+   • ¡Listo! 🎉
+
+
+✨ QUÉ VES CUANDO ABRES LA PÁGINA:
+═════════════════════════════════════════════════════════════════════════════
+
+   [HERO SECTION CON VIDEO DE FONDO]
+   ┌─────────────────────────────────────┐
+   │  Video reproduciéndose de fondo     │
+   │  sin sonido                          │
+   │                                     │
+   │  Título: "Dirección de Innovación"  │
+   │  Subtítulo: "Transformamos..."      │
+   │                                     │
+   │           [🔘 BOTÓN PLAY]           │  ← Haz clic aquí
+   │           (círculo blanco)           │
+   └─────────────────────────────────────┘
+
+   👇 AL HACER CLIC EN EL BOTÓN:
+   
+   ┌─────────────────────────────────────┐
+   │     VIDEO MAXIMIZADO                │
+   │     (con sonido)                    │
+   │                                     │
+   │ Controles: Play | Pausa | Volumen  │
+   │            Progreso | Pantalla      │
+   │                                     │
+   │  [X] ← Clic para cerrar             │
+   └─────────────────────────────────────┘
+
+   CERRAR CON:
+   • Clic en la X
+   • Tecla ESC
+   • Clic fuera del video
+
+
+⚙️  CAMBIOS COMUNES QUE PUEDES HACER:
+═════════════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────┐
+│ Si quieres cambiar...            │ Busca en el HTML...     │
+├──────────────────────────────────┼────────────────────────┤
+│ Altura del video de fondo        │ .video-hero {           │
+│                                  │   height: 600px;        │
+├──────────────────────────────────┼────────────────────────┤
+│ Oscuridad del fondo              │ rgba(0, 0, 0, 0.4)      │
+│ (cambiar 0.4 a otro número)      │ (0=nada, 1=todo negro)  │
+├──────────────────────────────────┼────────────────────────┤
+│ Color del título/botón           │ #003d99 (azul UNEMI)    │
+│ (azul a otro color)              │ Busca y reemplaza       │
+└──────────────────────────────────┴────────────────────────┘
+
+
+❓ PROBLEMAS COMUNES:
+═════════════════════════════════════════════════════════════════════════════
+
+P: El video no aparece
+R: • ¿El archivo .mp4 está en la misma carpeta que index.html?
+   • ¿El nombre en el HTML coincide con el nombre real del archivo?
+   • Verifica mayúsculas/minúsculas
+
+P: El video está muy comprimido o cortado
+R: • Aumenta: height: 600px → height: 800px (o más)
+   • O cambia: object-fit: cover → object-fit: contain
+
+P: No se escucha el audio
+R: • El video de fondo está MUTED (sin sonido)
+   • El sonido aparece cuando haces clic y se amplía
+
+
+📱 FUNCIONA EN:
+═════════════════════════════════════════════════════════════════════════════
+
+✓ Chrome / Chromium
+✓ Firefox
+✓ Safari
+✓ Edge
+✓ Móviles (responsive)
+
+
+🎬 PARA MOSTRAR A TU JEFE:
+═════════════════════════════════════════════════════════════════════════════
+
+1. Abre index.html en tu navegador
+2. Muestra que el video se reproduce sin sonido
+3. Haz clic en el botón de play
+4. Muestra que ahora tiene sonido y controles
+5. Cierra con ESC o la X
+6. Redimensiona la ventana (para mostrar responsividad)
+7. Pregunta: "¿Te gustaría hacer cambios en el color o tamaño?"
+
+
+📦 CUANDO APRUEBE TU JEFE:
+═════════════════════════════════════════════════════════════════════════════
+
+Sigue estos pasos para implementarlo en la web real:
+
+1. Accede a: www.unemi.edu.ec/wp-admin
+2. Ve a: Multimedia → Añadir nuevo
+3. Sube tu video
+4. Copia la URL del video subido
+5. Ve a: Páginas → Editar "Dirección de Innovación..."
+6. En WPBakery, añade un elemento "HTML personalizado"
+7. Copia todo el código del index.html
+8. Cambia la ruta del video por la URL que copiaste
+9. Publica
+
+
+💡 NOTAS TÉCNICAS:
+═════════════════════════════════════════════════════════════════════════════
+
+• El HTML es completamente standalone (no necesita Internet)
+• Excepto por las imágenes del equipo que se cargan de UNEMI
+• El video se carga desde la carpeta local
+• Tamaño recomendado del video: máx 100MB
+• Formatos soportados: MP4, WebM, Ogg
+
+
+📞 CONTACTO:
+═════════════════════════════════════════════════════════════════════════════
+
+Si tienes dudas:
+• Abre el archivo GUIA_VIDEO_FONDO.docx (versión completa con más detalles)
+• Lee el archivo README.txt (instrucciones detalladas)
+• Revisa el código HTML (tiene comentarios explicativos)
+
+
+═════════════════════════════════════════════════════════════════════════════
+                    ¡LISTO PARA MOSTRAR A TU JEFE! 🚀
+═════════════════════════════════════════════════════════════════════════════
