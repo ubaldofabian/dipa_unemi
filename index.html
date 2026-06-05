@@ -3954,7 +3954,7 @@
       left: 0 !important;
       width: 100% !important;
       height: 100% !important;
-      background: rgba(25, 32, 65, 0.6) !important;
+      background: rgba(0, 35, 52, 0.55) !important;
       z-index: 2 !important;
       margin: 0 !important;
       padding: 0 !important;
@@ -4914,6 +4914,37 @@
       font-family: 'Poppins', sans-serif !important;
     }
 
+    /* Palabra resaltada (naranja) dentro de los títulos: también Poppins */
+    .meu-hero h1 .orange,
+    .meu-h2 .orange,
+    .meu-section-head h2 .orange,
+    .meu-intro-text h3 .orange,
+    .meu-pilar h3 .orange,
+    .meu-cta-body h2 .orange,
+    .meu-flip-front h3 .orange {
+      font-family: 'Poppins', sans-serif !important;
+    }
+
+    /* Hero estilo DJI: solo video + botones, hacia la parte baja, tipo píldora */
+    .meu-hero {
+      justify-content: flex-end !important;
+    }
+
+    .meu-hero-content {
+      padding-top: 0 !important;
+      padding-bottom: 150px !important;
+      text-align: center;
+    }
+
+    .meu-hero-actions {
+      justify-content: center;
+    }
+
+    .meu-hero .meu-action-primary,
+    .meu-hero .meu-action-secondary {
+      border-radius: 50px !important;
+    }
+
     /* === Color: blanco en secciones oscuras, navy/negro en claras === */
     /* Secciones oscuras */
     .meu-hero h1,
@@ -5524,17 +5555,6 @@
     <div class="meu-hero-glow"></div>
 
     <div class="meu-hero-content" style="position: relative; z-index: 3;">
-      <span class="meu-eyebrow">VOL · 2026 · ECOSISTEMA GLOBAL DE FORMACIÓN</span>
-      <h1>
-        Una nueva<br>
-        generación de<br>
-        <span class="orange">formación superior</span>
-      </h1>
-      <p class="meu-hero-sub">
-        El Modelo Educativo UNEMI 2026 articula filosofía institucional, currículo, enseñanza,
-        evaluación, innovación e internacionalización para formar profesionales preparados
-        para los retos del siglo XXI.
-      </p>
       <div class="meu-hero-actions">
         <button class="meu-action-primary"
           onclick="document.getElementById('me-dimensiones').scrollIntoView({behavior:'smooth'})">
@@ -5546,27 +5566,6 @@
         </button>
       </div>
     </div>
-
-    <div class="meu-hero-stats">
-      <div class="meu-stats-grid">
-        <div class="meu-stat">
-          <div class="meu-stat-num" data-target="8">8</div>
-          <div class="meu-stat-label">Dimensiones estratégicas</div>
-        </div>
-        <div class="meu-stat">
-          <div class="meu-stat-num" data-target="4">4</div>
-          <div class="meu-stat-label">Competencias del Sello UNEMI</div>
-        </div>
-        <div class="meu-stat">
-          <div class="meu-stat-num" data-target="3">3</div>
-          <div class="meu-stat-label">Ámbitos de formación</div>
-        </div>
-        <div class="meu-stat">
-          <div class="meu-stat-num">2026</div>
-          <div class="meu-stat-label">Nuevo horizonte educativo</div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- INTRO + QUOTE -->
@@ -5576,7 +5575,7 @@
       <div class="meu-intro-grid">
         <div class="meu-intro-text">
           <span class="meu-label" style="color: var(--orange)">Visión institucional</span>
-          <h3>Ecosistema Global de Formación <span class="orange">por Competencias</span></h3>
+          <h3>Ecosistema global de formación <span class="orange">por competencias</span></h3>
           <p class="meu-sub">Hacia una formación inclusiva, flexible, tecnológica y socialmente transformadora.</p>
           <p>
             El Modelo Educativo UNEMI 2026 constituye el marco orientador que articula la filosofía institucional,
@@ -5605,7 +5604,7 @@
     <div class="meu-container">
       <div class="meu-section-head center">
         <span class="meu-label">Estructura del modelo</span>
-        <h2 class="meu-h2">Las 8 <span class="orange">Dimensiones</span> Estratégicas</h2>
+        <h2 class="meu-h2">Las 8 <span class="orange">dimensiones</span> estratégicas</h2>
         <p class="meu-lead" style="margin: 20px auto 0">Haz clic en una tarjeta para descubrir su contenido. Navega con
           las flechas.</p>
       </div>
@@ -6255,7 +6254,7 @@
               <div class="meu-flip-icon"><i class="fas fa-users-gear"></i></div>
               <h3>Competencias Genéricas</h3>
               <p>Sello UNEMI · Transversales</p>
-              <div class="meu-flip-hint">▾ HOVER PARA VER MÁS</div>
+              <div class="meu-flip-hint">▾ PASA EL CURSOR O TOCA</div>
             </div>
             <div class="meu-flip-face meu-flip-back">
               <h4>El Sello UNEMI incluye</h4>
@@ -6275,7 +6274,7 @@
               <div class="meu-flip-icon"><i class="fas fa-microscope"></i></div>
               <h3>Competencias Específicas</h3>
               <p>Campo profesional · Perfil de egreso</p>
-              <div class="meu-flip-hint">▾ HOVER PARA VER MÁS</div>
+              <div class="meu-flip-hint">▾ PASA EL CURSOR O TOCA</div>
             </div>
             <div class="meu-flip-face meu-flip-back">
               <h4>Se vinculan con</h4>
@@ -6299,7 +6298,7 @@
     <div class="meu-container">
       <div class="meu-section-head center">
         <span class="meu-label">Actores del modelo</span>
-        <h2 class="meu-h2">Roles en el <span class="orange">Proceso Formativo</span></h2>
+        <h2 class="meu-h2">Roles en el <span class="orange">proceso formativo</span></h2>
         <p class="meu-lead" style="margin: 20px auto 0">El modelo define claramente el
           papel de cada actor en la construcción del aprendizaje.</p>
       </div>
@@ -6316,7 +6315,7 @@
       <div class="meu-proceso-panel active" data-panel="estudiante">
         <div class="meu-proceso-visual">
           <div class="meu-proceso-icon"><i class="fas fa-user-graduate"></i></div>
-          <h3>El Estudiante<br>UNEMI</h3>
+          <h3>El estudiante<br>UNEMI</h3>
           <p>Protagonista activo, reflexivo y altamente responsable de su propio aprendizaje.</p>
         </div>
         <div class="meu-proceso-list">
@@ -6355,7 +6354,7 @@
       <div class="meu-proceso-panel" data-panel="docente">
         <div class="meu-proceso-visual">
           <div class="meu-proceso-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-          <h3>El Docente<br>UNEMI</h3>
+          <h3>El docente<br>UNEMI</h3>
           <p>Mediador, diseñador de experiencias formativas e impulsor constante de la mejora educativa.</p>
         </div>
         <div class="meu-proceso-list">
@@ -6606,51 +6605,51 @@
 
       <div class="meu-galeria-grid">
         <div class="meu-galeria-item">
-          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07238-scaled.jpg" alt="Campus UNEMI">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC0550.jpeg" alt="UNEMI 01">
           <span class="label">UNEMI MODELO · 01</span>
         </div>
         <div class="meu-galeria-item">
-          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07237-scaled.jpg" alt="Equipo UNEMI">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07238-scaled.jpg" alt="Campus UNEMI">
           <span class="label">UNEMI MODELO · 02</span>
         </div>
         <div class="meu-galeria-item">
-          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07240-scaled.jpg" alt="Autoridades UNEMI">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07237-scaled.jpg" alt="Equipo UNEMI">
           <span class="label">UNEMI MODELO · 03</span>
         </div>
         <div class="meu-galeria-item">
-          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07245-scaled.jpg" alt="Aula UNEMI">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07240-scaled.jpg" alt="Autoridades UNEMI">
           <span class="label">UNEMI MODELO · 04</span>
         </div>
         <div class="meu-galeria-item">
-          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07298-scaled.png" alt="Eventos UNEMI">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07245-scaled.jpg" alt="Aula UNEMI">
           <span class="label">UNEMI MODELO · 05</span>
         </div>
         <div class="meu-galeria-item">
-          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07254-scaled.jpg" alt="UNEMI 06">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07298-scaled.png" alt="Eventos UNEMI">
           <span class="label">UNEMI MODELO · 06</span>
         </div>
         <div class="meu-galeria-item">
-          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07267-scaled.jpg" alt="UNEMI 07">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07254-scaled.jpg" alt="UNEMI 06">
           <span class="label">UNEMI MODELO · 07</span>
         </div>
         <div class="meu-galeria-item">
-          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07277-scaled.jpg" alt="UNEMI 08">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07267-scaled.jpg" alt="UNEMI 07">
           <span class="label">UNEMI MODELO · 08</span>
         </div>
         <div class="meu-galeria-item">
-          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07303-scaled.jpg" alt="UNEMI 09">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07277-scaled.jpg" alt="UNEMI 08">
           <span class="label">UNEMI MODELO · 09</span>
         </div>
         <div class="meu-galeria-item">
-          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07244-scaled.jpg" alt="UNEMI 10">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07303-scaled.jpg" alt="UNEMI 09">
           <span class="label">UNEMI MODELO · 10</span>
         </div>
         <div class="meu-galeria-item">
-          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07246-scaled.jpg" alt="UNEMI 11">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07244-scaled.jpg" alt="UNEMI 10">
           <span class="label">UNEMI MODELO · 11</span>
         </div>
         <div class="meu-galeria-item">
-          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07247-scaled.jpg" alt="UNEMI 12">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07246-scaled.jpg" alt="UNEMI 11">
           <span class="label">UNEMI MODELO · 12</span>
         </div>
       </div>
@@ -7075,18 +7074,19 @@
 
     // ===== Descarga / Ver online del PDF del Modelo Educativo =====
     (function () {
-      var PDF = 'https://www.unemi.edu.ec/wp-content/uploads/2026/06/Modelo-Educativo-UNEMI-2026.pdf';
+      var PDF = 'https://www.unemi.edu.ec/wp-content/uploads/2026/06/Propuesta-Modelo-Educativo-UNEMI-2026-JUNIO.pdf';
+      var ONLINE = 'https://heyzine.com/flip-book/857143c17d.html';
       var d = document.getElementById('meuDescargaPDF');
       var v = document.getElementById('meuVerOnline');
       if (d) d.addEventListener('click', function () {
         var a = document.createElement('a');
         a.href = PDF;
-        a.download = 'Modelo-Educativo-UNEMI-2026.pdf';
+        a.download = 'Propuesta-Modelo-Educativo-UNEMI-2026-JUNIO.pdf';
         document.body.appendChild(a);
         a.click();
         a.remove();
       });
-      if (v) v.addEventListener('click', function () { window.open(PDF, '_blank'); });
+      if (v) v.addEventListener('click', function () { window.open(ONLINE, '_blank'); });
     })();
 
     // ===== Lightbox: abrir imágenes (galería / intro) en grande =====

@@ -1745,7 +1745,7 @@ section {
       left: 0 !important;
       width: 100% !important;
       height: 100% !important;
-      background: rgba(25, 32, 65, 0.6) !important;
+      background: rgba(0, 35, 52, 0.55) !important;
       z-index: 2 !important;
       margin: 0 !important;
       padding: 0 !important;
@@ -2691,6 +2691,37 @@ section {
     .dim-card-front h3,
     .dim-card-back h3 {
       font-family: 'Poppins', sans-serif !important;
+    }
+
+    /* Palabra resaltada (naranja) dentro de los títulos: también Poppins */
+    .meu-hero h1 .orange,
+    .meu-h2 .orange,
+    .meu-section-head h2 .orange,
+    .meu-intro-text h3 .orange,
+    .meu-pilar h3 .orange,
+    .meu-cta-body h2 .orange,
+    .meu-flip-front h3 .orange {
+      font-family: 'Poppins', sans-serif !important;
+    }
+
+    /* Hero estilo DJI: solo video + botones, hacia la parte baja, tipo píldora */
+    .meu-hero {
+      justify-content: flex-end !important;
+    }
+
+    .meu-hero-content {
+      padding-top: 0 !important;
+      padding-bottom: 150px !important;
+      text-align: center;
+    }
+
+    .meu-hero-actions {
+      justify-content: center;
+    }
+
+    .meu-hero .meu-action-primary,
+    .meu-hero .meu-action-secondary {
+      border-radius: 50px !important;
     }
 
     /* === Color: blanco en secciones oscuras, navy/negro en claras === */
