@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93352d47-f25f-4ea2-913a-4076b22dfc58" name="Changes" comment="change buttons and add pictures">
+    <list default="true" id="93352d47-f25f-4ea2-913a-4076b22dfc58" name="Changes" comment="fix tittle from Posgrado y proyeccion global">
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-export/2-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/2-styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-export/2-styles.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/2-styles.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-export/_overrides.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/_overrides.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-export/TODO-min.html" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/TODO-min.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-export/TODO-pagina.html" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/TODO-pagina.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780690629081</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix tittle from Posgrado y proyeccion global">
+      <option name="closed" value="true" />
+      <created>1780691008033</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1780691008033</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +169,7 @@
     <MESSAGE value="add videos into gallery and some fix" />
     <MESSAGE value="fix title and delete video into gallery" />
     <MESSAGE value="change buttons and add pictures" />
-    <option name="LAST_COMMIT_MESSAGE" value="change buttons and add pictures" />
+    <MESSAGE value="fix tittle from Posgrado y proyeccion global" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix tittle from Posgrado y proyeccion global" />
   </component>
 </project>
