@@ -266,7 +266,7 @@
 
     // Video modal
     function openVideo(url) {
-      var HERO = 'https://www.unemi.edu.ec/wp-content/uploads/2026/06/Video-Modelo-Educativo.mp4';
+      var HERO = 'https://www.unemi.edu.ec/wp-content/uploads/2026/06/Modelo-Educativo-UNEMI-2026-SL.mp4';
       url = url || HERO;
       var modal = document.getElementById('videoModal');
       if (!modal) return;
@@ -340,7 +340,7 @@
       });
     })();
 
-    // ===== Descarga / Ver online del PDF del Modelo Educativo =====
+    // ===== Descarga / Ver online del PDF del Modelo educativo =====
     (function () {
       var PDF = 'https://www.unemi.edu.ec/wp-content/uploads/2026/06/Propuesta-Modelo-Educativo-UNEMI-2026-JUNIO.pdf';
       var ONLINE = 'https://heyzine.com/flip-book/857143c17d.html';
