@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93352d47-f25f-4ea2-913a-4076b22dfc58" name="Changes" comment="fix tittle from Posgrado y proyeccion global">
+    <list default="true" id="93352d47-f25f-4ea2-913a-4076b22dfc58" name="Changes" comment="fix Sentence-case remaining titles">
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-export/TODO-min.html" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/TODO-min.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-export/TODO-pagina.html" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/TODO-pagina.html" afterDir="false" />
@@ -143,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780691008033</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix Sentence-case remaining titles">
+      <option name="closed" value="true" />
+      <created>1780691552696</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1780691552696</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +178,7 @@
     <MESSAGE value="fix title and delete video into gallery" />
     <MESSAGE value="change buttons and add pictures" />
     <MESSAGE value="fix tittle from Posgrado y proyeccion global" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix tittle from Posgrado y proyeccion global" />
+    <MESSAGE value="fix Sentence-case remaining titles" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix Sentence-case remaining titles" />
   </component>
 </project>
