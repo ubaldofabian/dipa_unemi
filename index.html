@@ -5093,6 +5093,43 @@
       color: #002334 !important;
     }
 
+    /* Galería: tile de video destacado (fondo en bucle, clic = abrir con sonido) */
+    .meu-galeria-video {
+      cursor: pointer;
+    }
+
+    .meu-gal-video-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .meu-gal-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: rgba(252, 126, 0, 0.9);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      z-index: 3;
+      pointer-events: none;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      transition: transform .3s;
+    }
+
+    .meu-galeria-video:hover .meu-gal-play {
+      transform: translate(-50%, -50%) scale(1.12);
+    }
+
     /* Lightbox de imágenes (galería / intro) */
     .meu-galeria-item,
     .meu-intro-image {
@@ -5518,15 +5555,15 @@
         </div>
         <div class="meu-stat">
           <div class="meu-stat-num" data-target="4">4</div>
-          <div class="meu-stat-label">Competencias genéricas</div>
+          <div class="meu-stat-label">Competencias del Sello UNEMI</div>
         </div>
         <div class="meu-stat">
           <div class="meu-stat-num" data-target="3">3</div>
-          <div class="meu-stat-label">Niveles curriculares</div>
+          <div class="meu-stat-label">Ámbitos de formación</div>
         </div>
         <div class="meu-stat">
           <div class="meu-stat-num">2026</div>
-          <div class="meu-stat-label">Año del modelo vigente</div>
+          <div class="meu-stat-label">Nuevo horizonte educativo</div>
         </div>
       </div>
     </div>
@@ -5537,10 +5574,6 @@
     <div class="meu-container">
 
       <div class="meu-intro-grid">
-        <div class="meu-intro-image">
-          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07241-scaled.jpg"
-            alt="Modelo Educativo UNEMI 2026" style="width:100%;height:100%;object-fit:cover">
-        </div>
         <div class="meu-intro-text">
           <span class="meu-label" style="color: var(--orange)">Visión institucional</span>
           <h3>Ecosistema Global de Formación <span class="orange">por Competencias</span></h3>
@@ -6572,25 +6605,61 @@
       </div>
 
       <div class="meu-galeria-grid">
+        <div class="meu-galeria-item meu-galeria-video"
+          onclick="openVideo('https://www.unemi.edu.ec/wp-content/uploads/2026/06/Modelo-Educativo-UNEMI-2024-CRAI.mp4')">
+          <video class="meu-gal-video-bg" autoplay loop muted playsinline>
+            <source src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/Modelo-Educativo-UNEMI-2024-CRAI.mp4"
+              type="video/mp4">
+          </video>
+          <span class="label">VIDEO · MODELO</span>
+        </div>
         <div class="meu-galeria-item">
           <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07238-scaled.jpg" alt="Campus UNEMI">
-          <span class="label">CAMPUS · 01</span>
+          <span class="label">UNEMI MODELO · 01</span>
         </div>
         <div class="meu-galeria-item">
           <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07237-scaled.jpg" alt="Equipo UNEMI">
-          <span class="label">EQUIPO · 02</span>
+          <span class="label">UNEMI MODELO · 02</span>
         </div>
         <div class="meu-galeria-item">
           <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07240-scaled.jpg" alt="Autoridades UNEMI">
-          <span class="label">AUTORIDADES · 03</span>
+          <span class="label">UNEMI MODELO · 03</span>
         </div>
         <div class="meu-galeria-item">
           <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07245-scaled.jpg" alt="Aula UNEMI">
-          <span class="label">AULA · 04</span>
+          <span class="label">UNEMI MODELO · 04</span>
         </div>
         <div class="meu-galeria-item">
           <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07298-scaled.png" alt="Eventos UNEMI">
-          <span class="label">EVENTOS · 05</span>
+          <span class="label">UNEMI MODELO · 05</span>
+        </div>
+        <div class="meu-galeria-item">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07254-scaled.jpg" alt="UNEMI 06">
+          <span class="label">UNEMI MODELO · 06</span>
+        </div>
+        <div class="meu-galeria-item">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07267-scaled.jpg" alt="UNEMI 07">
+          <span class="label">UNEMI MODELO · 07</span>
+        </div>
+        <div class="meu-galeria-item">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07277-scaled.jpg" alt="UNEMI 08">
+          <span class="label">UNEMI MODELO · 08</span>
+        </div>
+        <div class="meu-galeria-item">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07303-scaled.jpg" alt="UNEMI 09">
+          <span class="label">UNEMI MODELO · 09</span>
+        </div>
+        <div class="meu-galeria-item">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07244-scaled.jpg" alt="UNEMI 10">
+          <span class="label">UNEMI MODELO · 10</span>
+        </div>
+        <div class="meu-galeria-item">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07246-scaled.jpg" alt="UNEMI 11">
+          <span class="label">UNEMI MODELO · 11</span>
+        </div>
+        <div class="meu-galeria-item">
+          <img src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/DSC07247-scaled.jpg" alt="UNEMI 12">
+          <span class="label">UNEMI MODELO · 12</span>
         </div>
       </div>
     </div>
@@ -6937,12 +7006,19 @@
     });
 
     // Video modal
-    function openVideo() {
+    function openVideo(url) {
+      var HERO = 'https://www.unemi.edu.ec/wp-content/uploads/2026/06/Video-Modelo-Educativo.mp4';
+      url = url || HERO;
       var modal = document.getElementById('videoModal');
       if (!modal) return;
-      modal.classList.add('active');
       var video = document.getElementById('modalVideoPlayer');
-      if (video) video.play();
+      if (video && video.getAttribute('data-current') !== url) {
+        video.src = url;
+        video.setAttribute('data-current', url);
+        video.load();
+      }
+      modal.classList.add('active');
+      if (video) { video.muted = false; video.currentTime = 0; video.play(); }
     }
     function closeVideo() {
       var modal = document.getElementById('videoModal');

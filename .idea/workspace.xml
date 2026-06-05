@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93352d47-f25f-4ea2-913a-4076b22dfc58" name="Changes" comment="add WP config for update" />
+    <list default="true" id="93352d47-f25f-4ea2-913a-4076b22dfc58" name="Changes" comment="Change color profile and add pdf, img" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780667324561</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Change color profile and add pdf, img">
+      <option name="closed" value="true" />
+      <created>1780674774988</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1780674774988</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +129,7 @@
     <MESSAGE value="new design update" />
     <MESSAGE value="add workflow" />
     <MESSAGE value="add WP config for update" />
-    <option name="LAST_COMMIT_MESSAGE" value="add WP config for update" />
+    <MESSAGE value="Change color profile and add pdf, img" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change color profile and add pdf, img" />
   </component>
 </project>
