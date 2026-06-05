@@ -1208,6 +1208,11 @@
       color: #002334 !important;
     }
 
+    /* Tarjeta navy de Posgrado: su título en blanco (legible sobre el fondo oscuro) */
+    .meu-section--light .meu-posgrado--alt h3 {
+      color: #ffffff !important;
+    }
+
     /* Galería: tile de video destacado (fondo en bucle, clic = abrir con sonido) */
     .meu-galeria-video {
       cursor: pointer;

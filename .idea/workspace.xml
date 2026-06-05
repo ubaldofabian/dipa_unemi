@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93352d47-f25f-4ea2-913a-4076b22dfc58" name="Changes" comment="fix title and delete video into gallery">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="93352d47-f25f-4ea2-913a-4076b22dfc58" name="Changes" comment="change buttons and add pictures">
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-export/2-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/2-styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-export/2-styles.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/2-styles.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-export/3-scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/3-scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-export/3-scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/3-scripts.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-export/TODO-min.html" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/TODO-min.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-export/TODO-pagina.html" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/TODO-pagina.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-export/_overrides.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/_overrides.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780680776474</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="change buttons and add pictures">
+      <option name="closed" value="true" />
+      <created>1780690629081</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1780690629081</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +161,7 @@
     <MESSAGE value="Change color profile and add pdf, img" />
     <MESSAGE value="add videos into gallery and some fix" />
     <MESSAGE value="fix title and delete video into gallery" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix title and delete video into gallery" />
+    <MESSAGE value="change buttons and add pictures" />
+    <option name="LAST_COMMIT_MESSAGE" value="change buttons and add pictures" />
   </component>
 </project>
