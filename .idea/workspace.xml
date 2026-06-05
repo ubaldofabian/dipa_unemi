@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93352d47-f25f-4ea2-913a-4076b22dfc58" name="Changes" comment="add workflow">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="93352d47-f25f-4ea2-913a-4076b22dfc58" name="Changes" comment="add WP config for update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,16 +83,44 @@
       <option name="project" value="LOCAL" />
       <updated>1780089967159</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add WP config for update">
+      <option name="closed" value="true" />
+      <created>1780667237634</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1780667237634</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add WP config for update">
+      <option name="closed" value="true" />
+      <created>1780667324561</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1780667324561</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new design" />
     <MESSAGE value="new design update" />
     <MESSAGE value="add workflow" />
-    <option name="LAST_COMMIT_MESSAGE" value="add workflow" />
+    <MESSAGE value="add WP config for update" />
+    <option name="LAST_COMMIT_MESSAGE" value="add WP config for update" />
   </component>
 </project>

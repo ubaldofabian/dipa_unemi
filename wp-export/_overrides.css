@@ -9,7 +9,7 @@
       --primary-blue: #192041;
       --primary-dark: #002334;
       --secondary-blue: #0077b5;
-      --accent-orange: #f9b000;
+      --accent-orange: #fc7e00;
       --light-gray: #f2f3f5;
       --dark-gray: #32373c;
       --text-dark: #32373c;
@@ -213,7 +213,7 @@
     header#custom-header,
     html body header#custom-header {
       background: rgba(28, 50, 71, 0.8) !important;
-      /* #1c3247 con 80% de opacidad */
+      /* #002334 con 80% de opacidad */
       color: white !important;
       position: absolute !important;
       top: 0 !important;
@@ -589,7 +589,7 @@
 
     /* Acotado a .meu-footer para NO afectar el <footer> del tema (que conservamos en WP) */
     .meu-footer {
-      background: #1c3247;
+      background: #002334;
       color: white;
       padding: 50px 20px 30px;
       margin-top: 60px;
@@ -799,7 +799,7 @@
     }
     /* Reset duro contra estilos heredados de WP que rompen el layout dark */
     body {
-      background: #0a0e14 !important;
+      background: #002334 !important;
       color: #fff !important;
       font-family: 'Montserrat', sans-serif !important;
     }
@@ -976,7 +976,26 @@
     .meu-galeria-item .label,
     .meu-dim-tag,
     .meu-intro-text .meu-sub {
-      font-family: 'JetBrains Mono', ui-monospace, monospace !important;
+      font-family: 'Montserrat', sans-serif !important;
+    }
+
+    /* Títulos en Poppins (como el sitio institucional) */
+    .meu-hero h1,
+    .meu-h2,
+    .meu-h3,
+    .meu-section-head h2,
+    .meu-cta-body h2,
+    .meu-intro-text h3,
+    .meu-flip-front h3,
+    .meu-flip-back h4,
+    .meu-pilar h3,
+    .meu-posgrado h3,
+    .meu-step-body h3,
+    .meu-proceso-visual h3,
+    .meu-dim-panel h3,
+    .dim-card-front h3,
+    .dim-card-back h3 {
+      font-family: 'Poppins', sans-serif !important;
     }
 
     /* === Color: blanco en secciones oscuras, navy/negro en claras === */
@@ -1016,7 +1035,7 @@
     .meu-intro-text h3 .orange,
     .meu-flip-front h3 .orange,
     .meu-pilar h3 .orange {
-      color: #f9b000 !important;
+      color: #fc7e00 !important;
       font-size: 1em !important;
     }
 
@@ -1029,7 +1048,7 @@
     .meu-quote p,
     .meu-quote cite,
     .meu-proceso-item strong {
-      color: #0a0e14 !important;
+      color: #002334 !important;
     }
 
     .meu-quote cite {
@@ -1091,6 +1110,122 @@
       color: #444 !important;
     }
 
+    /* Roles (sección navy): texto de los ítems en claro y más grande (legible sobre navy) */
+    .meu-section--navy .meu-proceso-item strong {
+      color: #ffffff !important;
+      font-size: 18px !important;
+    }
+
+    .meu-section--navy .meu-proceso-item span {
+      color: rgba(255, 255, 255, 0.82) !important;
+      font-size: 15.5px !important;
+      line-height: 1.65;
+    }
+
+    .meu-section--navy .meu-proceso-item {
+      border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+    }
+
+    /* Roles: tarjeta visual con más contraste sobre el navy */
+    .meu-section--navy .meu-proceso-visual {
+      background: linear-gradient(160deg, #0a3a54 0%, #002334 100%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      border-radius: 14px;
+    }
+
+    /* Roles: pestañas Estudiante/Docente — vidrio oscuro + activa en naranja */
+    .meu-section--navy .meu-proceso-tabs {
+      background: rgba(255, 255, 255, 0.06) !important;
+      border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    }
+
+    .meu-section--navy .meu-proceso-tab {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .meu-section--navy .meu-proceso-tab.active {
+      background: var(--orange) !important;
+      color: #ffffff !important;
+    }
+
+    /* Quitar el margin-bottom que el tema mete a los <button> (espacio extra bajo las pestañas) */
+    .meu-proceso-tabs button {
+      margin: 0 !important;
+    }
+
+    /* Posgrado (sección clara): 1ª tarjeta en blanco con texto oscuro (la 2ª se queda navy) */
+    .meu-section--light .meu-posgrado:not(.meu-posgrado--alt) {
+      background: #ffffff !important;
+      border: 1px solid var(--line-light) !important;
+    }
+
+    .meu-section--light .meu-posgrado:not(.meu-posgrado--alt) h3 {
+      color: #002334 !important;
+    }
+
+    .meu-section--light .meu-posgrado:not(.meu-posgrado--alt)>p {
+      color: #444 !important;
+    }
+
+    .meu-section--light .meu-posgrado:not(.meu-posgrado--alt) ul li {
+      color: #444 !important;
+      border-bottom-color: #eeeeee !important;
+    }
+
+    .meu-section--light .meu-posgrado:not(.meu-posgrado--alt) ul li strong {
+      color: #002334 !important;
+    }
+
+    /* Lightbox de imágenes (galería / intro) */
+    .meu-galeria-item,
+    .meu-intro-image {
+      cursor: zoom-in;
+    }
+
+    .meu-img-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1100;
+      background: rgba(0, 0, 0, 0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      cursor: zoom-out;
+    }
+
+    .meu-img-modal.active {
+      display: flex;
+    }
+
+    .meu-img-modal img {
+      max-width: 92vw;
+      max-height: 88vh;
+      object-fit: contain;
+      box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+      border-radius: 4px;
+    }
+
+    .meu-img-modal-close {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .admin-bar .meu-img-modal-close {
+      top: 56px;
+    }
+
     .meu-pilar ul li,
     .meu-flip-back ul li {
       color: inherit !important;
@@ -1105,11 +1240,11 @@
     .meu-proceso-list h4,
     .meu-footer-col h5,
     .meu-intro-text .meu-sub {
-      color: #f9b000 !important;
+      color: #fc7e00 !important;
     }
 
     .meu-cta-meu {
-      color: #f9b000 !important;
+      color: #fc7e00 !important;
     }
 
     /* Botones del header / CTA — preservar tipografía y peso */
@@ -1117,7 +1252,7 @@
     .meu-action-primary,
     .meu-cta-actions button:first-child {
       color: #ffffff !important;
-      background: #f9b000 !important;
+      background: #fc7e00 !important;
     }
 
     .meu-btn-search,
@@ -1166,7 +1301,7 @@
 
     .meu-nav a.active,
     .meu-nav a:hover {
-      color: #f9b000 !important;
+      color: #fc7e00 !important;
     }
 
     .meu-footer-col a {
@@ -1345,7 +1480,7 @@
 
     .meu-mobile-nav a:hover,
     .meu-mobile-nav a:focus {
-      color: #f9b000 !important;
+      color: #fc7e00 !important;
       background: transparent !important;
     }
 
@@ -1452,10 +1587,10 @@
       }
 
       .dim-card-front {
-        background: linear-gradient(160deg, rgba(249, 176, 0, 0.24) 0%, rgba(249, 176, 0, 0.06) 65%), rgba(22, 30, 48, 0.92);
+        background: linear-gradient(160deg, rgba(252, 126, 0, 0.24) 0%, rgba(252, 126, 0, 0.06) 65%), rgba(22, 30, 48, 0.92);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(249, 176, 0, 0.3);
+        border: 1px solid rgba(252, 126, 0, 0.3);
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
       }
 
@@ -1466,7 +1601,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(90deg, #f9b000, #ff9a44);
+        background: linear-gradient(90deg, #fc7e00, #f78d37);
         border-radius: 18px 18px 0 0;
       }
 
@@ -1477,7 +1612,7 @@
         right: -60px;
         width: 180px;
         height: 180px;
-        background: radial-gradient(circle, rgba(249, 176, 0, 0.12) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(252, 126, 0, 0.12) 0%, transparent 70%);
         border-radius: 50%;
         pointer-events: none;
       }
@@ -1486,7 +1621,7 @@
         font-family: 'JetBrains Mono', monospace !important;
         font-size: 64px;
         font-weight: 800;
-        color: rgba(249, 176, 0, 0.12);
+        color: rgba(252, 126, 0, 0.12);
         position: absolute;
         top: 20px;
         right: 24px;
@@ -1498,13 +1633,13 @@
         width: 64px;
         height: 64px;
         border-radius: 16px;
-        background: linear-gradient(135deg, #f9b000, #ff9a44);
+        background: linear-gradient(135deg, #fc7e00, #f78d37);
         display: grid;
         place-items: center;
         font-size: 26px;
         color: #fff;
         margin-bottom: 20px;
-        box-shadow: 0 8px 24px rgba(249, 176, 0, 0.3);
+        box-shadow: 0 8px 24px rgba(252, 126, 0, 0.3);
       }
 
       .dim-card-front h3 {
@@ -1519,7 +1654,7 @@
       .dim-card-hint {
         font-family: 'JetBrains Mono', monospace !important;
         font-size: 11px;
-        color: rgba(249, 176, 0, 0.7) !important;
+        color: rgba(252, 126, 0, 0.7) !important;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         margin-top: 12px;
@@ -1527,15 +1662,15 @@
       }
 
       .dim-card:hover .dim-card-hint {
-        color: #f9b000 !important;
+        color: #fc7e00 !important;
       }
 
       /* ===== BACK ===== */
       .dim-card-back {
-        background: linear-gradient(160deg, rgba(249, 176, 0, 0.2) 0%, rgba(249, 176, 0, 0.05) 65%), rgba(26, 36, 56, 0.95);
+        background: linear-gradient(160deg, rgba(252, 126, 0, 0.2) 0%, rgba(252, 126, 0, 0.05) 65%), rgba(26, 36, 56, 0.95);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(249, 176, 0, 0.4);
+        border: 1px solid rgba(252, 126, 0, 0.4);
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
         transform: rotateY(180deg);
         justify-content: flex-start;
@@ -1546,7 +1681,7 @@
         font-family: 'JetBrains Mono', monospace !important;
         font-size: 11px;
         letter-spacing: 0.18em;
-        color: #f9b000 !important;
+        color: #fc7e00 !important;
         font-weight: 600;
         margin-bottom: 10px;
         text-transform: uppercase;
@@ -1578,10 +1713,10 @@
         font-size: 10px !important;
         letter-spacing: 0.06em;
         padding: 5px 10px;
-        border: 1px solid rgba(249, 176, 0, 0.35);
+        border: 1px solid rgba(252, 126, 0, 0.35);
         border-radius: 4px;
-        color: #f9b000 !important;
-        background: rgba(249, 176, 0, 0.06);
+        color: #fc7e00 !important;
+        background: rgba(252, 126, 0, 0.06);
         white-space: nowrap;
       }
 
@@ -1660,7 +1795,7 @@
 
       /* Solo el hover pone ámbar (va después para ganarle al focus cuando el cursor está encima) */
       .dim-carousel-arrow:hover {
-        color: #f9b000 !important;
+        color: #fc7e00 !important;
         transform: scale(1.25);
         background: transparent !important;
       }
@@ -1685,9 +1820,9 @@
       }
 
       .dim-dot.active {
-        background: #f9b000;
-        border-color: #f9b000;
-        box-shadow: 0 0 8px rgba(249, 176, 0, 0.5);
+        background: #fc7e00;
+        border-color: #fc7e00;
+        box-shadow: 0 0 8px rgba(252, 126, 0, 0.5);
         transform: scale(1.25);
       }
 
