@@ -1016,17 +1016,39 @@
 
     .meu-hero-content {
       padding-top: 0 !important;
-      padding-bottom: 150px !important;
-      text-align: center;
+      padding-bottom: 90px !important;
+      text-align: left;
     }
 
     .meu-hero-actions {
-      justify-content: center;
+      justify-content: flex-start;
+      margin-top: 30px;
     }
 
     .meu-hero .meu-action-primary,
     .meu-hero .meu-action-secondary {
       border-radius: 50px !important;
+    }
+
+    /* Portada del hero: título + barra naranja + tagline (estilo documento maestro) */
+    .meu-hero-title {
+      font-size: clamp(34px, 6.5vw, 78px) !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.005em !important;
+      line-height: 1.02 !important;
+      margin: 0 0 20px !important;
+      max-width: none !important;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+    }
+
+    .meu-hero-tagline {
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: clamp(16px, 2vw, 26px);
+      letter-spacing: 0.02em;
+      margin-top: 4px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
     }
 
     /* === Color: blanco en secciones oscuras, navy/negro en claras === */
