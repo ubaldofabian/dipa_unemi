@@ -1498,8 +1498,7 @@ section {
 }
 
 .meu-galeria-item:nth-child(1) {
-  grid-column: span 2;
-  grid-row: span 2;
+  grid-row: auto;
 }
 
 .meu-galeria-item:hover {
@@ -1763,8 +1762,7 @@ section {
   }
 
   .meu-galeria-item:nth-child(1) {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-row: auto;
   }
 
   .meu-nav {
