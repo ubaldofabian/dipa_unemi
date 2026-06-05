@@ -4156,7 +4156,8 @@
     .header-nav {
       display: flex !important;
       gap: 0;
-      align-items: center;
+      align-items: stretch;
+      align-self: stretch;
       background: transparent !important;
       padding: 0 !important;
       box-shadow: none !important;
@@ -4166,18 +4167,31 @@
       color: #ffffff !important;
       text-decoration: none;
       font-size: 0.95em;
-      padding: 15px 20px;
-      transition: all 0.3s ease;
-      border-bottom: 3px solid transparent;
+      padding: 0 18px;
+      transition: color 0.3s ease;
+      border: 0 !important;
       font-weight: 700 !important;
       position: relative;
-      display: inline-block;
+      display: flex;
+      align-items: center;
     }
 
-    .header-nav a:hover {
+    .header-nav a:hover,
+    .header-nav a.active {
       color: var(--accent-orange);
-      border-bottom-color: var(--accent-orange);
-      background: rgba(255, 149, 0, 0.05);
+      background: transparent !important;
+    }
+
+    /* Línea deslizante única (estilo institucional) */
+    .meu-nav-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--accent-orange);
+      pointer-events: none;
+      transition: left .35s cubic-bezier(.4, 0, .2, 1), width .35s cubic-bezier(.4, 0, .2, 1);
     }
 
     /* Ocultar nav antigua si existe */
@@ -4477,7 +4491,8 @@
       margin-bottom: 0;
     }
 
-    footer {
+    /* Acotado a .meu-footer para NO afectar el <footer> del tema (que conservamos en WP) */
+    .meu-footer {
       background: #1c3247;
       color: white;
       padding: 50px 20px 30px;
@@ -4485,7 +4500,7 @@
       border-top: 5px solid var(--accent-orange);
     }
 
-    footer h4 {
+    .meu-footer h4 {
       margin-bottom: 15px;
       color: var(--accent-orange);
       font-weight: 600;
@@ -4493,13 +4508,13 @@
       letter-spacing: 0.3px;
     }
 
-    footer p {
+    .meu-footer p {
       font-size: 0.95em;
       margin-bottom: 8px;
       line-height: 1.6;
     }
 
-    footer a {
+    .meu-footer a {
       color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
       display: inline-block;
@@ -4508,7 +4523,7 @@
       font-size: 0.95em;
     }
 
-    footer a:hover {
+    .meu-footer a:hover {
       color: var(--accent-orange);
     }
 
@@ -4520,7 +4535,7 @@
       margin: 0 auto;
     }
 
-    footer strong {
+    .meu-footer strong {
       color: white;
       font-weight: 600;
     }
@@ -4724,12 +4739,82 @@
       padding: 0 !important;
     }
 
-    /* Asegurar que nuestros bloques tengan ancho completo */
+    /* Pegar el header arriba y a los lados: anular espacios de los contenedores de WPBakery */
+    .content-container,
+    .main_wrapper,
+    .site_wrapper {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+    }
+
+    .vc_row,
+    .vc_row-fluid,
+    .wpb_row {
+      margin: 0 !important;
+    }
+
+    .wpb_column>.vc_column-inner {
+      padding: 0 !important;
+    }
+
+    .wpb_wrapper {
+      margin: 0 !important;
+    }
+
+    .wpb_raw_html {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* Quitar el relleno del .container (espacio superior) — mantenerlo CENTRADO */
+    .main_wrapper .container,
+    .content-container .container {
+      padding: 0 !important;
+    }
+
+    /* Evitar que los contenedores recorten el ancho completo del header */
+    .vc_row,
+    .vc_row-fluid,
+    .wpb_row,
+    .wpb_column,
+    .vc_column_container,
+    .vc_column-inner,
+    .wpb_wrapper,
+    .wpb_raw_html,
+    .main_wrapper .container,
+    .content-container .container,
+    .main_wrapper,
+    .site_wrapper,
+    .content-container {
+      overflow: visible !important;
+    }
+
+    /* Secciones a todo el ancho (full-bleed centrado), como el header */
+    .meu-hero,
     .meu-section,
-    .meu-cta-section,
-    .meu-footer {
-      width: 100% !important;
-      max-width: 100% !important;
+    .meu-cta-section {
+      width: 100vw !important;
+      max-width: 100vw !important;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Botón cerrar (✕) del modal de video: círculo limpio y más abajo bajo la barra de admin */
+    .meu-modal-close {
+      width: 44px !important;
+      height: 44px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border-radius: 50% !important;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .admin-bar .meu-modal-close {
+      top: 60px !important;
     }
 
     /* === Headings: override agresivo de la fuente/color heredados del tema wizeedu === */
@@ -4742,7 +4827,7 @@
     .meu-intro-text h3,
     .meu-step-body h3,
     .meu-posgrado h3,
-    .meu-role-visual h3,
+    .meu-proceso-visual h3,
     .meu-cta-body h2,
     .meu-dim-panel h3,
     .meu-footer-col h5,
@@ -4764,8 +4849,8 @@
     .meu-node-num,
     .meu-node-label,
     .meu-flip-hint,
-    .meu-role-tab,
-    .meu-role-list h4,
+    .meu-proceso-tab,
+    .meu-proceso-list h4,
     .meu-step-mono,
     .meu-step-tag,
     .meu-dim-tag,
@@ -4786,9 +4871,9 @@
     .meu-step-body p,
     .meu-intro-text p,
     .meu-intro-text .meu-sub,
-    .meu-role-visual p,
-    .meu-role-item strong,
-    .meu-role-item span,
+    .meu-proceso-visual p,
+    .meu-proceso-item strong,
+    .meu-proceso-item span,
     .meu-cta-body p {
       font-family: 'Montserrat', sans-serif !important;
     }
@@ -4802,7 +4887,7 @@
     .meu-dim-panel-num,
     .meu-node-label,
     .meu-flip-hint,
-    .meu-role-list h4,
+    .meu-proceso-list h4,
     .meu-footer-col h5,
     .meu-galeria-item .label,
     .meu-dim-tag,
@@ -4823,8 +4908,8 @@
     .meu-cta-section h2,
     .meu-cta-section h3,
     .meu-footer h5,
-    .meu-role-visual h3,
-    .meu-role-visual h3 *,
+    .meu-proceso-visual h3,
+    .meu-proceso-visual h3 *,
     .meu-flip-front h3,
     .meu-flip-back h4,
     .meu-step-body h3,
@@ -4847,7 +4932,7 @@
     .meu-intro-text h3 .orange,
     .meu-flip-front h3 .orange,
     .meu-pilar h3 .orange {
-      color: #f37021 !important;
+      color: #f9b000 !important;
       font-size: 1em !important;
     }
 
@@ -4859,7 +4944,7 @@
     .meu-pilar h3,
     .meu-quote p,
     .meu-quote cite,
-    .meu-role-item strong {
+    .meu-proceso-item strong {
       color: #0a0e14 !important;
     }
 
@@ -4868,13 +4953,13 @@
     }
 
     /* Override del override: cards/visuales oscuros DENTRO de secciones claras siguen siendo blancos */
-    .meu-section--light .meu-role-visual h3,
-    .meu-section--light .meu-role-visual h3 *,
-    .meu-section--light .meu-role-visual p {
+    .meu-section--light .meu-proceso-visual h3,
+    .meu-section--light .meu-proceso-visual h3 *,
+    .meu-section--light .meu-proceso-visual p {
       color: #ffffff !important;
     }
 
-    .meu-section--light .meu-role-visual p {
+    .meu-section--light .meu-proceso-visual p {
       color: rgba(255, 255, 255, 0.72) !important;
     }
 
@@ -4887,6 +4972,22 @@
       color: #ffffff !important;
     }
 
+    /* Flip por clase (además del hover): se usa al tocar en móvil */
+    .meu-flip.flipped .meu-flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* En táctil (sin hover): anular el hover "pegajoso"; SOLO la clase .flipped voltea */
+    @media (hover: none) {
+      .meu-flip:hover .meu-flip-inner {
+        transform: none;
+      }
+
+      .meu-flip.flipped .meu-flip-inner {
+        transform: rotateY(180deg);
+      }
+    }
+
     /* Párrafos / textos secundarios: garantizar contraste */
     .meu-section--dark p,
     .meu-section--navy p,
@@ -4895,14 +4996,14 @@
     .meu-step-body p,
     .meu-dim-panel p,
     .meu-posgrado>p,
-    .meu-role-visual p,
+    .meu-proceso-visual p,
     .meu-cta-body>p:last-child {
       color: rgba(255, 255, 255, 0.72) !important;
     }
 
     .meu-section--light p:not(.meu-sub):not(.meu-label) .meu-pilar p,
     .meu-intro-text p,
-    .meu-role-item span {
+    .meu-proceso-item span {
       color: #444 !important;
     }
 
@@ -4917,14 +5018,14 @@
     .meu-step-level,
     .meu-dim-panel-num,
     .meu-flip-hint,
-    .meu-role-list h4,
+    .meu-proceso-list h4,
     .meu-footer-col h5,
     .meu-intro-text .meu-sub {
-      color: #f37021 !important;
+      color: #f9b000 !important;
     }
 
     .meu-cta-meu {
-      color: #f37021 !important;
+      color: #f9b000 !important;
     }
 
     /* Botones del header / CTA — preservar tipografía y peso */
@@ -4932,7 +5033,7 @@
     .meu-action-primary,
     .meu-cta-actions button:first-child {
       color: #ffffff !important;
-      background: #f37021 !important;
+      background: #f9b000 !important;
     }
 
     .meu-btn-search,
@@ -4948,13 +5049,40 @@
       color: inherit;
     }
 
+    /* Header: fondo institucional + ancho completo (full-bleed centrado) */
+    .meu-header {
+      background: #002334;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      overflow: visible;
+    }
+
+    /* Evitar el pequeño desplazamiento horizontal por el header full-bleed (100vw) */
+    html,
+    body {
+      overflow-x: hidden !important;
+    }
+
+    /* Bajar el header bajo la barra de administración de WP (solo al estar logueado) */
+    .admin-bar .meu-header {
+      margin-top: 32px;
+    }
+
+    @media screen and (max-width: 782px) {
+      .admin-bar .meu-header {
+        margin-top: 46px;
+      }
+    }
+
     .meu-nav a {
-      color: rgba(255, 255, 255, 0.55) !important;
+      color: #ffffff !important;
     }
 
     .meu-nav a.active,
     .meu-nav a:hover {
-      color: #ffffff !important;
+      color: #f9b000 !important;
     }
 
     .meu-footer-col a {
@@ -4992,22 +5120,175 @@
     .meu-action-secondary,
     .meu-btn-primary,
     .meu-cta-actions button,
-    .meu-role-tab {
+    .meu-proceso-tab {
       border-radius: 0 !important;
     }
 
     /* Header: evitar que el nav haga wrap raro entre brand y CTAs */
     .meu-header-inner {
+      display: flex !important;
       flex-wrap: nowrap !important;
+      align-items: center !important;
+      min-height: 100px;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 30px;
+      padding-right: 30px;
     }
 
+    /* Header estilo institucional: logo a la izquierda, menú a la derecha */
     .meu-brand {
-      flex-shrink: 0;
+      flex: 0 0 auto !important;
     }
 
-    @media (max-width: 1280px) {
+    .meu-cta-header {
+      flex: 0 0 auto !important;
+      display: flex;
+      align-items: center;
+      align-self: center;
+    }
+
+    .meu-nav.header-nav {
+      flex: 0 0 auto;
+      margin-left: auto;
+      position: relative;
+    }
+
+    /* Logo UNEMI en el header del modelo */
+    .meu-logo-img {
+      display: block;
+      height: 60px;
+      width: auto;
+    }
+
+    /* Juntar los enlaces del menú: eliminar la separación del contenedor */
+    .meu-header .meu-nav,
+    .meu-nav.header-nav {
+      gap: 0 !important;
+      column-gap: 0 !important;
+    }
+
+    /* === Menú hamburguesa (móvil / pantallas pequeñas) === */
+    .meu-burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-self: center;
+      gap: 6px;
+      width: 50px;
+      height: 50px;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      cursor: pointer;
+    }
+
+    /* Quitar el resplandor/fondo amarillo del hover heredado del tema */
+    .meu-burger:hover,
+    .meu-burger:focus,
+    .meu-burger:active {
+      background: transparent !important;
+      box-shadow: none !important;
+      outline: none !important;
+    }
+
+    .meu-burger span {
+      display: block;
+      width: 32px;
+      height: 3px;
+      margin: 0 auto;
+      background: #ffffff;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+
+    /* Animación a "X" cuando el menú está abierto */
+    body.meu-menu-open .meu-burger span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    body.meu-menu-open .meu-burger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    body.meu-menu-open .meu-burger span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Panel del menú móvil — acordeón que empuja la página hacia abajo */
+    .meu-mobile-menu {
+      background: #ffffff;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .4s ease;
+      /* Ancho completo (full-bleed), igual que el header */
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    body.meu-menu-open .meu-mobile-menu {
+      max-height: 100vh;
+    }
+
+    /* Si la pantalla supera 1200px, cerrar el panel (evita ver ambos menús) */
+    @media (min-width: 1201px) {
+      .meu-mobile-menu {
+        max-height: 0 !important;
+      }
+    }
+
+    .meu-mobile-nav {
+      display: flex;
+      flex-direction: column;
+      padding: 8px 0;
+    }
+
+    .meu-mobile-nav a {
+      display: block;
+      padding: 18px 28px;
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 18px;
+      font-weight: 700;
+      color: #04263a !important;
+      text-decoration: none;
+      border: 0 !important;
+      background: transparent !important;
+    }
+
+    .meu-mobile-nav a:hover,
+    .meu-mobile-nav a:focus {
+      color: #f9b000 !important;
+      background: transparent !important;
+    }
+
+    @media (max-width: 1200px) {
       .meu-nav {
         display: none !important;
+      }
+
+      .meu-burger {
+        display: flex;
+      }
+
+      /* Empujar la hamburguesa al lado derecho */
+      .meu-cta-header {
+        margin-left: auto;
+      }
+
+      /* En móvil, dejar visible solo la hamburguesa en el header */
+      .meu-cta-header .meu-btn-search,
+      .meu-cta-header .meu-btn-primary {
+        display: none !important;
+      }
+
+      /* Quitar línea naranja (borde/sombra) bajo el header en móvil */
+      .meu-header {
+        border-bottom: 0 !important;
+        box-shadow: none !important;
       }
     }
   </style>
@@ -5021,42 +5302,50 @@
   <header class="meu-header">
     <div class="meu-header-inner">
       <div class="meu-brand">
-        <a class="meu-logo" href="#top">
-          <span class="meu-logo-mark">D</span>
-          <span class="meu-logo-text">
-            <strong>DIPA</strong>
-            <small>UNEMI · Modelo 2026</small>
-          </span>
+        <a class="meu-logo" href="https://www.unemi.edu.ec/" aria-label="Ir a UNEMI">
+          <img class="meu-logo-img"
+            src="https://www.unemi.edu.ec/wp-content/uploads/2021/09/LOGO-WEB-BLANCO.png"
+            alt="UNEMI - Universidad Estatal de Milagro">
         </a>
-        <nav class="meu-nav header-nav">
-          <a href="#top" class="active">Inicio</a>
-          <a href="#me-dimensiones">Dimensiones</a>
-          <a href="#me-competencias">Competencias</a>
-          <a href="#me-roles">Roles</a>
-          <a href="#me-posgrado">Posgrado</a>
-          <a href="#me-arquitectura">Arquitectura</a>
-          <a href="#me-pilares">Evaluación</a>
-          <a href="#me-descarga">Descargar</a>
-        </nav>
       </div>
+      <nav class="meu-nav header-nav">
+        <a href="#top" class="active">Inicio</a>
+        <a href="#me-dimensiones">Dimensiones</a>
+        <a href="#me-competencias">Competencias</a>
+        <a href="#me-proceso">Roles</a>
+        <a href="#me-posgrado">Posgrado</a>
+        <a href="#me-arquitectura">Arquitectura</a>
+        <a href="#me-pilares">Evaluación</a>
+        <a href="#me-descarga">Descargar</a>
+        <span class="meu-nav-line" aria-hidden="true"></span>
+      </nav>
       <div class="meu-cta-header">
-        <button class="meu-btn-search" aria-label="Buscar">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="7"></circle>
-            <path d="m21 21-4.3-4.3"></path>
-          </svg>
-          Buscar
+        <button class="meu-burger" id="meuBurger" aria-label="Abrir menú" aria-expanded="false"
+          aria-controls="meuMobileMenu">
+          <span></span><span></span><span></span>
         </button>
-        <button class="meu-btn-primary"
-          onclick="document.getElementById('me-descarga').scrollIntoView({behavior:'smooth'})">DESCARGAR PDF</button>
       </div>
     </div>
   </header>
 
+  <!-- MENÚ MÓVIL -->
+  <div class="meu-mobile-menu" id="meuMobileMenu" aria-hidden="true">
+    <nav class="meu-mobile-nav">
+      <a href="#top">Inicio</a>
+      <a href="#me-dimensiones">Dimensiones</a>
+      <a href="#me-competencias">Competencias</a>
+      <a href="#me-proceso">Roles</a>
+      <a href="#me-posgrado">Posgrado</a>
+      <a href="#me-arquitectura">Arquitectura</a>
+      <a href="#me-pilares">Evaluación</a>
+      <a href="#me-descarga">Descargar</a>
+    </nav>
+  </div>
+
   <!-- HERO -->
   <section class="meu-hero" id="top" style="position: relative; overflow: hidden;">
     <video autoplay loop muted playsinline class="video-background">
-      <source src="file:///C:/Users/Admin/ACADEMICO/DIPA-web/VideoModeloEducativo.mp4" type="video/mp4">
+      <source src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/Video-Modelo-Educativo.mp4" type="video/mp4">
     </video>
     <div class="video-overlay"></div>
     <div class="meu-hero-grid"></div>
@@ -5143,7 +5432,7 @@
   </section>
 
   <!-- 8 DIMENSIONES — CAROUSEL 3D CON FLIP CARDS -->
-  <section class="meu-section meu-section--dark" id="me-dimensiones" style="border-top: 0">
+  <section class="meu-section meu-section--navy" id="me-dimensiones" style="border-top: 0">
     <div class="meu-container">
       <div class="meu-section-head center">
         <span class="meu-label">Estructura del modelo</span>
@@ -5365,7 +5654,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 20px;
+        gap: 64px;
         margin-top: 50px;
         padding: 20px 0 40px;
       }
@@ -5377,6 +5666,13 @@
         perspective: 1200px;
         overflow: visible;
         position: relative;
+        cursor: grab;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      .dim-carousel-viewport:active {
+        cursor: grabbing;
       }
 
       .dim-carousel-track {
@@ -5429,9 +5725,11 @@
       }
 
       .dim-card-front {
-        background: linear-gradient(160deg, #1a2035 0%, #0d1220 50%, #0a0e14 100%);
-        border: 1px solid rgba(243, 112, 33, 0.15);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        background: linear-gradient(160deg, rgba(249, 176, 0, 0.24) 0%, rgba(249, 176, 0, 0.06) 65%), rgba(22, 30, 48, 0.92);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(249, 176, 0, 0.3);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
       }
 
       .dim-card-front::before {
@@ -5441,7 +5739,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(90deg, #f37021, #ff9a44);
+        background: linear-gradient(90deg, #f9b000, #ff9a44);
         border-radius: 18px 18px 0 0;
       }
 
@@ -5452,7 +5750,7 @@
         right: -60px;
         width: 180px;
         height: 180px;
-        background: radial-gradient(circle, rgba(243, 112, 33, 0.12) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(249, 176, 0, 0.12) 0%, transparent 70%);
         border-radius: 50%;
         pointer-events: none;
       }
@@ -5461,7 +5759,7 @@
         font-family: 'JetBrains Mono', monospace !important;
         font-size: 64px;
         font-weight: 800;
-        color: rgba(243, 112, 33, 0.12);
+        color: rgba(249, 176, 0, 0.12);
         position: absolute;
         top: 20px;
         right: 24px;
@@ -5473,13 +5771,13 @@
         width: 64px;
         height: 64px;
         border-radius: 16px;
-        background: linear-gradient(135deg, #f37021, #ff9a44);
+        background: linear-gradient(135deg, #f9b000, #ff9a44);
         display: grid;
         place-items: center;
         font-size: 26px;
         color: #fff;
         margin-bottom: 20px;
-        box-shadow: 0 8px 24px rgba(243, 112, 33, 0.3);
+        box-shadow: 0 8px 24px rgba(249, 176, 0, 0.3);
       }
 
       .dim-card-front h3 {
@@ -5494,7 +5792,7 @@
       .dim-card-hint {
         font-family: 'JetBrains Mono', monospace !important;
         font-size: 11px;
-        color: rgba(243, 112, 33, 0.7) !important;
+        color: rgba(249, 176, 0, 0.7) !important;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         margin-top: 12px;
@@ -5502,14 +5800,16 @@
       }
 
       .dim-card:hover .dim-card-hint {
-        color: #f37021 !important;
+        color: #f9b000 !important;
       }
 
       /* ===== BACK ===== */
       .dim-card-back {
-        background: linear-gradient(160deg, #1a2035 0%, #111827 100%);
-        border: 1px solid rgba(243, 112, 33, 0.25);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(160deg, rgba(249, 176, 0, 0.2) 0%, rgba(249, 176, 0, 0.05) 65%), rgba(26, 36, 56, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(249, 176, 0, 0.4);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
         transform: rotateY(180deg);
         justify-content: flex-start;
         padding: 32px 28px;
@@ -5519,7 +5819,7 @@
         font-family: 'JetBrains Mono', monospace !important;
         font-size: 11px;
         letter-spacing: 0.18em;
-        color: #f37021 !important;
+        color: #f9b000 !important;
         font-weight: 600;
         margin-bottom: 10px;
         text-transform: uppercase;
@@ -5551,10 +5851,10 @@
         font-size: 10px !important;
         letter-spacing: 0.06em;
         padding: 5px 10px;
-        border: 1px solid rgba(243, 112, 33, 0.35);
+        border: 1px solid rgba(249, 176, 0, 0.35);
         border-radius: 4px;
-        color: #f37021 !important;
-        background: rgba(243, 112, 33, 0.06);
+        color: #f9b000 !important;
+        background: rgba(249, 176, 0, 0.06);
         white-space: nowrap;
       }
 
@@ -5603,26 +5903,39 @@
 
       /* ===== ARROWS ===== */
       .dim-carousel-arrow {
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        background: rgba(255, 255, 255, 0.04);
-        color: #fff;
-        font-size: 18px;
+        width: 48px;
+        height: 48px;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        outline: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 32px;
         cursor: pointer;
-        transition: all 0.3s;
+        transition: color 0.3s, transform 0.3s;
         flex-shrink: 0;
         z-index: 10;
         display: grid;
         place-items: center;
-        backdrop-filter: blur(8px);
       }
 
+      /* Focus/active: anular el amarillo del tema y volver a blanco (no se queda ámbar tras el clic) */
+      .dim-carousel-arrow:focus,
+      .dim-carousel-arrow:active {
+        color: rgba(255, 255, 255, 0.65) !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        outline: none !important;
+        transform: none;
+      }
+
+      /* Solo el hover pone ámbar (va después para ganarle al focus cuando el cursor está encima) */
       .dim-carousel-arrow:hover {
-        background: #f37021;
-        border-color: #f37021;
-        box-shadow: 0 0 20px rgba(243, 112, 33, 0.4);
+        color: #f9b000 !important;
+        transform: scale(1.25);
+        background: transparent !important;
       }
 
       /* ===== DOTS ===== */
@@ -5645,9 +5958,9 @@
       }
 
       .dim-dot.active {
-        background: #f37021;
-        border-color: #f37021;
-        box-shadow: 0 0 8px rgba(243, 112, 33, 0.5);
+        background: #f9b000;
+        border-color: #f9b000;
+        box-shadow: 0 0 8px rgba(249, 176, 0, 0.5);
         transform: scale(1.25);
       }
 
@@ -5655,9 +5968,9 @@
       @media (max-width: 900px) {
         .dim-card {
           width: 280px;
-          height: 380px;
+          height: 440px;
           margin-left: -140px;
-          margin-top: -190px;
+          margin-top: -220px;
         }
 
         .dim-card[data-pos="left1"] {
@@ -5675,16 +5988,16 @@
         }
 
         .dim-carousel-viewport {
-          height: 400px;
+          height: 460px;
         }
       }
 
       @media (max-width: 640px) {
         .dim-card {
           width: 260px;
-          height: 360px;
+          height: 540px;
           margin-left: -130px;
-          margin-top: -180px;
+          margin-top: -270px;
         }
 
         .dim-card[data-pos="left1"] {
@@ -5698,13 +6011,59 @@
         }
 
         .dim-carousel-viewport {
-          height: 380px;
+          height: 560px;
         }
 
         .dim-carousel-arrow {
-          width: 40px;
-          height: 40px;
-          font-size: 14px;
+          width: 36px;
+          height: 36px;
+          font-size: 24px;
+        }
+
+        /* Reverso: aprovechar el espacio del móvil con tipografía más grande y legible */
+        .dim-card-front,
+        .dim-card-back {
+          padding: 28px 24px;
+        }
+
+        /* Centrar verticalmente el reverso: reparte el espacio (no queda vacío abajo) */
+        .dim-card-back {
+          justify-content: center;
+        }
+
+        .dim-card-back-label {
+          font-size: 12px !important;
+          margin-bottom: 12px;
+        }
+
+        .dim-card-back h3 {
+          font-size: 22px !important;
+          line-height: 1.3;
+          margin-bottom: 14px;
+        }
+
+        .dim-card-back p {
+          font-size: 15px !important;
+          line-height: 1.65;
+          margin-bottom: 16px;
+        }
+
+        .dim-card-tags {
+          gap: 7px;
+        }
+
+        .dim-card-tags span {
+          font-size: 11.5px !important;
+          padding: 6px 11px;
+        }
+
+        /* Frente: título y pista un poco más grandes en móvil */
+        .dim-card-front h3 {
+          font-size: 24px !important;
+        }
+
+        .dim-card-hint {
+          font-size: 12px !important;
         }
       }
     </style>
@@ -5767,55 +6126,55 @@
 
 
   <!-- ROLES -->
-  <section class="meu-section meu-section--dark" id="me-roles">
+  <section class="meu-section meu-section--navy" id="me-proceso">
     <div class="meu-container">
       <div class="meu-section-head center">
         <span class="meu-label">Actores del modelo</span>
         <h2 class="meu-h2">Roles en el <span class="orange">Proceso Formativo</span></h2>
-        <p class="meu-lead" style="margin: 20px auto 0; color: var(--text-light-dim)">El modelo define claramente el
+        <p class="meu-lead" style="margin: 20px auto 0">El modelo define claramente el
           papel de cada actor en la construcción del aprendizaje.</p>
       </div>
 
-      <div class="meu-role-tabs">
-        <button class="meu-role-tab active" data-role="estudiante">
+      <div class="meu-proceso-tabs">
+        <button class="meu-proceso-tab active" data-proceso="estudiante">
           <i class="fas fa-user-graduate"></i> Estudiante
         </button>
-        <button class="meu-role-tab" data-role="docente">
+        <button class="meu-proceso-tab" data-proceso="docente">
           <i class="fas fa-chalkboard-teacher"></i> Docente
         </button>
       </div>
 
-      <div class="meu-role-panel active" data-panel="estudiante">
-        <div class="meu-role-visual">
-          <div class="meu-role-icon"><i class="fas fa-user-graduate"></i></div>
+      <div class="meu-proceso-panel active" data-panel="estudiante">
+        <div class="meu-proceso-visual">
+          <div class="meu-proceso-icon"><i class="fas fa-user-graduate"></i></div>
           <h3>El Estudiante<br>UNEMI</h3>
           <p>Protagonista activo, reflexivo y altamente responsable de su propio aprendizaje.</p>
         </div>
-        <div class="meu-role-list">
+        <div class="meu-proceso-list">
           <h4>Capacidades que desarrolla</h4>
-          <div class="meu-role-item">
-            <div class="meu-role-item-icon"><i class="fas fa-brain"></i></div>
+          <div class="meu-proceso-item">
+            <div class="meu-proceso-item-icon"><i class="fas fa-brain"></i></div>
             <div>
               <strong>Autonomía progresiva</strong>
               <span>Toma decisiones sobre su propio proceso de aprendizaje con creciente independencia.</span>
             </div>
           </div>
-          <div class="meu-role-item">
-            <div class="meu-role-item-icon"><i class="fas fa-lightbulb"></i></div>
+          <div class="meu-proceso-item">
+            <div class="meu-proceso-item-icon"><i class="fas fa-lightbulb"></i></div>
             <div>
               <strong>Pensamiento crítico</strong>
               <span>Analiza, cuestiona y propone soluciones a problemas reales de su entorno.</span>
             </div>
           </div>
-          <div class="meu-role-item">
-            <div class="meu-role-item-icon"><i class="fas fa-users"></i></div>
+          <div class="meu-proceso-item">
+            <div class="meu-proceso-item-icon"><i class="fas fa-users"></i></div>
             <div>
               <strong>Colaboración</strong>
               <span>Trabaja en equipo, comunica ideas y construye conocimiento colectivo.</span>
             </div>
           </div>
-          <div class="meu-role-item">
-            <div class="meu-role-item-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="meu-proceso-item">
+            <div class="meu-proceso-item-icon"><i class="fas fa-laptop-code"></i></div>
             <div>
               <strong>Ciudadanía digital</strong>
               <span>Usa tecnologías e inteligencia artificial de manera ética y responsable.</span>
@@ -5824,37 +6183,37 @@
         </div>
       </div>
 
-      <div class="meu-role-panel" data-panel="docente">
-        <div class="meu-role-visual">
-          <div class="meu-role-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+      <div class="meu-proceso-panel" data-panel="docente">
+        <div class="meu-proceso-visual">
+          <div class="meu-proceso-icon"><i class="fas fa-chalkboard-teacher"></i></div>
           <h3>El Docente<br>UNEMI</h3>
           <p>Mediador, diseñador de experiencias formativas e impulsor constante de la mejora educativa.</p>
         </div>
-        <div class="meu-role-list">
+        <div class="meu-proceso-list">
           <h4>Funciones clave del docente</h4>
-          <div class="meu-role-item">
-            <div class="meu-role-item-icon"><i class="fas fa-hands-helping"></i></div>
+          <div class="meu-proceso-item">
+            <div class="meu-proceso-item-icon"><i class="fas fa-hands-helping"></i></div>
             <div>
               <strong>Mediador del aprendizaje</strong>
               <span>Facilita la construcción de conocimiento significativo y altamente contextualizado.</span>
             </div>
           </div>
-          <div class="meu-role-item">
-            <div class="meu-role-item-icon"><i class="fas fa-project-diagram"></i></div>
+          <div class="meu-proceso-item">
+            <div class="meu-proceso-item-icon"><i class="fas fa-project-diagram"></i></div>
             <div>
               <strong>Diseñador de experiencias</strong>
               <span>Planifica actividades estratégicas que movilizan competencias en situaciones reales.</span>
             </div>
           </div>
-          <div class="meu-role-item">
-            <div class="meu-role-item-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="meu-proceso-item">
+            <div class="meu-proceso-item-icon"><i class="fas fa-chart-line"></i></div>
             <div>
               <strong>Evaluación formativa</strong>
               <span>Retroalimenta de forma continua y constructiva para mejorar el proceso formativo.</span>
             </div>
           </div>
-          <div class="meu-role-item">
-            <div class="meu-role-item-icon"><i class="fas fa-robot"></i></div>
+          <div class="meu-proceso-item">
+            <div class="meu-proceso-item-icon"><i class="fas fa-robot"></i></div>
             <div>
               <strong>Uso responsable de la IA</strong>
               <span>Integra tecnologías emergentes con sólido criterio pedagógico y ético.</span>
@@ -5995,7 +6354,7 @@
       <div class="meu-section-head center">
         <span class="meu-label">Pilares transversales</span>
         <h2 class="meu-h2">Evaluación, Tecnología<br>y <span class="orange">Calidad</span></h2>
-        <p class="meu-lead" style="margin: 20px auto 0; color: var(--text-light-dim)">Tres ejes transversales que
+        <p class="meu-lead" style="margin: 20px auto 0">Tres ejes transversales que
           sostienen la implementación del modelo en todos los niveles.</p>
       </div>
 
@@ -6055,10 +6414,10 @@
           evaluación auténtica y la mejora continua basada en analítica de datos.</p>
       </div>
       <div class="meu-cta-actions">
-        <button onclick="window.location.href='Propuesta Modelo Educativo UNEMI2026.docx (2).pdf'">
+        <button id="meuDescargaPDF">
           <span style="font-size:18px">↓</span> DESCARGAR PDF
         </button>
-        <button>VER ONLINE ↗</button>
+        <button id="meuVerOnline">VER ONLINE ↗</button>
       </div>
     </div>
   </section>
@@ -6160,7 +6519,7 @@
       <button class="meu-modal-close" onclick="closeVideo()"
         style="position: absolute; top: 20px; right: 20px; z-index: 9999; font-size: 24px; width: 44px; height: 44px; border-radius: 50%; border: none; background: rgba(255,255,255,0.2); color: #fff; cursor: pointer;">✕</button>
       <video id="modalVideoPlayer" controls style="width: 100%; height: 100%; object-fit: contain; outline: none;">
-        <source src="file:///C:/Users/Admin/ACADEMICO/DIPA-web/VideoModeloEducativo.mp4" type="video/mp4">
+        <source src="https://www.unemi.edu.ec/wp-content/uploads/2026/06/Video-Modelo-Educativo.mp4" type="video/mp4">
         Tu navegador no soporta la reproducción de video.
       </video>
     </div>
@@ -6176,6 +6535,10 @@
       var total = cards.length;
       var current = 0;
       var autoTimer = null;
+      var dragMoved = false;
+
+      // Si aún no existe el carrusel en la página, salir sin romper el resto del JS
+      if (!total || !arrowLeft || !arrowRight) return;
 
       function getPos(offset) {
         if (offset === 0) return 'center';
@@ -6231,6 +6594,7 @@
 
       cards.forEach(function (card) {
         card.addEventListener('click', function () {
+          if (dragMoved) { dragMoved = false; return; }
           var idx = parseInt(card.getAttribute('data-index'));
           if (idx === current) {
             card.classList.toggle('flipped');
@@ -6247,19 +6611,127 @@
         if (e.key === 'ArrowLeft') prev();
       });
 
-      // Touch swipe support
-      var touchStartX = 0;
+      // ===== Arrastre "en vivo" con ROTACIÓN siguiendo al cursor/dedo (mouse + táctil) =====
+      var dragging = false;
+      var dragStartX = 0;
+      var touchStartY = 0;
+      var dragAxis = null;     // 'h' (horizontal) | 'v' (vertical) — se decide al iniciar el gesto táctil
+      var activeStep = 340;    // px para avanzar una posición (según pantalla)
+      var activeSlots = null;
       var viewport = document.querySelector('.dim-carousel-viewport');
-      if (viewport) {
-        viewport.addEventListener('touchstart', function (e) {
-          touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        viewport.addEventListener('touchend', function (e) {
-          var diff = e.changedTouches[0].screenX - touchStartX;
-          if (Math.abs(diff) > 50) {
-            if (diff < 0) next(); else prev();
+
+      // Posiciones por slot según ancho de pantalla (coinciden con el CSS): [x, z, rotateY, opacity, brillo]
+      function computeSlots() {
+        var w = window.innerWidth;
+        if (w <= 640) {
+          activeStep = 180;
+          activeSlots = { '-2': [-360, -160, 16, 0, 0.45], '-1': [-180, -80, 8, 0.6, 0.7], '0': [0, 0, 0, 1, 1], '1': [180, -80, -8, 0.6, 0.7], '2': [360, -160, -16, 0, 0.45] };
+        } else if (w <= 900) {
+          activeStep = 240;
+          activeSlots = { '-2': [-480, -200, 16, 0, 0.45], '-1': [-240, -100, 10, 0.85, 0.7], '0': [0, 0, 0, 1, 1], '1': [240, -100, -10, 0.85, 0.7], '2': [480, -200, -16, 0, 0.45] };
+        } else {
+          activeStep = 340;
+          activeSlots = { '-2': [-580, -260, 20, 0.5, 0.45], '-1': [-340, -120, 12, 0.85, 0.7], '0': [0, 0, 0, 1, 1], '1': [340, -120, -12, 0.85, 0.7], '2': [580, -260, -20, 0.5, 0.45] };
+        }
+      }
+      computeSlots();
+
+      function lerp(a, b, t) { return a + (b - a) * t; }
+      function slotVals(r) {
+        var S = activeSlots;
+        if (r <= -2) return S['-2'];
+        if (r >= 2) return S['2'];
+        var lo = Math.floor(r), t = r - lo, A = S[lo], B = S[lo + 1];
+        return [lerp(A[0], B[0], t), lerp(A[1], B[1], t), lerp(A[2], B[2], t), lerp(A[3], B[3], t), lerp(A[4], B[4], t)];
+      }
+      // Coloca cada tarjeta en una posición fraccionaria (interpola entre slots)
+      function applyDrag(frac) {
+        cards.forEach(function (card) {
+          var idx = parseInt(card.getAttribute('data-index'));
+          var r = idx - frac;
+          if (r > total / 2) r -= total;
+          if (r < -total / 2) r += total;
+          if (r < -2.3 || r > 2.3) {
+            card.style.opacity = '0';
+            card.style.transform = 'translateX(0) translateZ(-500px)';
+            card.style.zIndex = '1';
+            return;
           }
+          var v = slotVals(r);
+          card.style.transform = 'translateX(' + v[0] + 'px) translateZ(' + v[1] + 'px) rotateY(' + v[2] + 'deg)';
+          card.style.opacity = v[3];
+          card.style.filter = 'brightness(' + v[4] + ')';
+          card.style.zIndex = String(Math.round(10 - Math.abs(r)));
+        });
+      }
+      function setCardTransition(on) {
+        cards.forEach(function (card) { card.style.transition = on ? '' : 'none'; });
+      }
+      function clearCardInline() {
+        cards.forEach(function (card) {
+          card.style.transform = ''; card.style.opacity = '';
+          card.style.filter = ''; card.style.zIndex = '';
+        });
+      }
+      function startDrag(x) {
+        computeSlots();           // adaptar a la pantalla actual
+        dragging = true; dragMoved = false; dragAxis = null; dragStartX = x;
+        clearInterval(autoTimer);
+        setCardTransition(false); // seguir al dedo/cursor sin retraso
+      }
+      function moveDrag(x) {
+        if (!dragging) return;
+        var dx = x - dragStartX;
+        if (Math.abs(dx) > 6) dragMoved = true;
+        applyDrag(current - dx / activeStep); // arrastrar a la derecha → entra la anterior
+      }
+      function endDrag(x) {
+        if (!dragging) return;
+        dragging = false;
+        var dx = x - dragStartX;
+        var target = Math.round(current - dx / activeStep);
+        setCardTransition(true);  // snap suave (transición del CSS)
+        clearCardInline();        // devolver el control al CSS (data-pos)
+        current = ((target % total) + total) % total;
+        updateCarousel();
+        resetAuto();
+      }
+      function cancelDrag() {
+        if (!dragging) return;
+        dragging = false;
+        setCardTransition(true);
+        clearCardInline();
+        updateCarousel();
+        resetAuto();
+      }
+
+      if (viewport) {
+        // Mouse (escritorio)
+        viewport.addEventListener('mousedown', function (e) { startDrag(e.clientX); e.preventDefault(); });
+        window.addEventListener('mousemove', function (e) { moveDrag(e.clientX); });
+        window.addEventListener('mouseup', function (e) { endDrag(e.clientX); });
+
+        // Táctil (móvil): mismo arrastre en vivo, con detección de dirección
+        viewport.addEventListener('touchstart', function (e) {
+          var t = e.changedTouches[0];
+          touchStartY = t.clientY;
+          startDrag(t.clientX);
         }, { passive: true });
+        viewport.addEventListener('touchmove', function (e) {
+          if (!dragging) return;
+          var t = e.changedTouches[0];
+          var dx = t.clientX - dragStartX;
+          var dy = t.clientY - touchStartY;
+          if (dragAxis === null) {
+            if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return; // aún sin decidir
+            dragAxis = Math.abs(dx) > Math.abs(dy) ? 'h' : 'v';
+          }
+          if (dragAxis === 'v') { cancelDrag(); return; }        // gesto vertical → scroll normal
+          e.preventDefault();                                    // gesto horizontal → rotar (sin scroll)
+          moveDrag(t.clientX);
+        }, { passive: false });
+        viewport.addEventListener('touchend', function (e) { endDrag(e.changedTouches[0].clientX); }, { passive: true });
+        viewport.addEventListener('touchcancel', cancelDrag, { passive: true });
       }
 
       // Init
@@ -6268,13 +6740,13 @@
     })();
 
     // Roles tabs
-    document.querySelectorAll('.meu-role-tab').forEach(function (btn) {
+    document.querySelectorAll('.meu-proceso-tab').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        document.querySelectorAll('.meu-role-tab').forEach(function (b) { b.classList.remove('active'); });
+        document.querySelectorAll('.meu-proceso-tab').forEach(function (b) { b.classList.remove('active'); });
         btn.classList.add('active');
-        var role = btn.getAttribute('data-role');
-        document.querySelectorAll('.meu-role-panel').forEach(function (p) { p.classList.remove('active'); });
-        var target = document.querySelector('.meu-role-panel[data-panel="' + role + '"]');
+        var role = btn.getAttribute('data-proceso');
+        document.querySelectorAll('.meu-proceso-panel').forEach(function (p) { p.classList.remove('active'); });
+        var target = document.querySelector('.meu-proceso-panel[data-panel="' + role + '"]');
         if (target) target.classList.add('active');
       });
     });
@@ -6322,16 +6794,100 @@
 
     // Video modal
     function openVideo() {
-      document.getElementById('videoModal').classList.add('active');
+      var modal = document.getElementById('videoModal');
+      if (!modal) return;
+      modal.classList.add('active');
       var video = document.getElementById('modalVideoPlayer');
       if (video) video.play();
     }
     function closeVideo() {
-      document.getElementById('videoModal').classList.remove('active');
+      var modal = document.getElementById('videoModal');
+      if (!modal) return;
+      modal.classList.remove('active');
       var video = document.getElementById('modalVideoPlayer');
       if (video) video.pause();
     }
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeVideo(); });
+
+    // ===== Menú hamburguesa (móvil) =====
+    (function () {
+      var burger = document.getElementById('meuBurger');
+      var menu = document.getElementById('meuMobileMenu');
+      if (!burger || !menu) return;
+
+      function openMenu() {
+        document.body.classList.add('meu-menu-open');
+        burger.setAttribute('aria-expanded', 'true');
+        menu.setAttribute('aria-hidden', 'false');
+      }
+      function closeMenu() {
+        document.body.classList.remove('meu-menu-open');
+        burger.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-hidden', 'true');
+      }
+      function toggleMenu() {
+        if (document.body.classList.contains('meu-menu-open')) closeMenu();
+        else openMenu();
+      }
+
+      burger.addEventListener('click', toggleMenu);
+      // Cerrar al pulsar un enlace del menú
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', closeMenu);
+      });
+      // Cerrar con Escape
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+      // Cerrar si la pantalla crece más de 1200px (evita ver ambos menús)
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 1200) closeMenu();
+      });
+    })();
+
+    // ===== Flip cards de Competencias: voltear al tocar (solo en pantallas táctiles) =====
+    (function () {
+      var noHover = window.matchMedia && window.matchMedia('(hover: none)').matches;
+      if (!noHover) return; // en escritorio ya giran con el hover
+      var flips = document.querySelectorAll('.meu-flip');
+      flips.forEach(function (card) {
+        card.addEventListener('click', function () {
+          card.classList.toggle('flipped'); // tocar de nuevo la tarjeta la regresa
+        });
+      });
+      // Tocar fuera de las tarjetas: regresar todas a su posición original
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.meu-flip')) {
+          flips.forEach(function (c) { c.classList.remove('flipped'); });
+        }
+      });
+    })();
+
+    // ===== Línea deslizante del menú (estilo institucional) =====
+    (function () {
+      var nav = document.querySelector('.meu-nav.header-nav');
+      if (!nav) return;
+      var line = nav.querySelector('.meu-nav-line');
+      var links = nav.querySelectorAll('a');
+      if (!line || !links.length) return;
+      var hovering = false;
+
+      function moveLineTo(el) {
+        if (!el) return;
+        line.style.left = el.offsetLeft + 'px';
+        line.style.width = el.offsetWidth + 'px';
+      }
+      function moveToActive() {
+        moveLineTo(nav.querySelector('a.active') || links[0]);
+      }
+
+      links.forEach(function (a) {
+        a.addEventListener('mouseenter', function () { hovering = true; moveLineTo(a); });
+      });
+      nav.addEventListener('mouseleave', function () { hovering = false; moveToActive(); });
+      window.addEventListener('resize', function () { if (!hovering) moveToActive(); });
+      window.addEventListener('scroll', function () { if (!hovering) moveToActive(); });
+      window.addEventListener('load', moveToActive);
+      moveToActive();
+    })();
   </script>
 
 </body>

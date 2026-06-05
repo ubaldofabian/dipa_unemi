@@ -954,7 +954,7 @@ section {
 /* ============================================
    ROLES — tabs
 ============================================ */
-.meu-role-tabs {
+.meu-proceso-tabs {
   display: flex;
   justify-content: center;
   gap: 0;
@@ -967,7 +967,7 @@ section {
   border: 1px solid var(--line-light);
 }
 
-.meu-role-tab {
+.meu-proceso-tab {
   background: transparent;
   color: var(--text-light-dim);
   border: 0;
@@ -982,12 +982,12 @@ section {
   transition: all .25s;
 }
 
-.meu-role-tab.active {
+.meu-proceso-tab.active {
   background: var(--bg);
   color: white;
 }
 
-.meu-role-panel {
+.meu-proceso-panel {
   display: none;
   grid-template-columns: 1fr 1.3fr;
   gap: 60px;
@@ -995,11 +995,11 @@ section {
   animation: fadeInDim .4s ease;
 }
 
-.meu-role-panel.active {
+.meu-proceso-panel.active {
   display: grid;
 }
 
-.meu-role-visual {
+.meu-proceso-visual {
   background: linear-gradient(180deg, var(--navy) 0%, #001823 100%);
   color: white;
   padding: 56px 40px;
@@ -1010,24 +1010,24 @@ section {
   overflow: hidden;
 }
 
-.meu-role-visual::after {
+.meu-proceso-visual::after {
   content: '';
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at 30% 30%, rgba(243, 112, 33, 0.2), transparent 60%);
 }
 
-.meu-role-visual>* {
+.meu-proceso-visual>* {
   position: relative;
 }
 
-.meu-role-icon {
+.meu-proceso-icon {
   font-size: 72px;
   color: var(--gold);
   margin-bottom: 28px;
 }
 
-.meu-role-visual h3 {
+.meu-proceso-visual h3 {
   font-size: 36px;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -1035,13 +1035,13 @@ section {
   line-height: 1.1;
 }
 
-.meu-role-visual p {
+.meu-proceso-visual p {
   font-size: 16px;
   color: var(--text-dim);
   line-height: 1.65;
 }
 
-.meu-role-list h4 {
+.meu-proceso-list h4 {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -1051,7 +1051,7 @@ section {
   font-family: 'JetBrains Mono', monospace;
 }
 
-.meu-role-item {
+.meu-proceso-item {
   display: grid;
   grid-template-columns: 48px 1fr;
   gap: 18px;
@@ -1060,17 +1060,17 @@ section {
   transition: all .25s;
 }
 
-.meu-role-item:last-child {
+.meu-proceso-item:last-child {
   border-bottom: 0;
 }
 
-.meu-role-item:hover {
+.meu-proceso-item:hover {
   background: rgba(243, 112, 33, 0.04);
   padding-left: 16px;
   padding-right: 16px;
 }
 
-.meu-role-item-icon {
+.meu-proceso-item-icon {
   width: 48px;
   height: 48px;
   background: linear-gradient(135deg, var(--orange), var(--gold));
@@ -1081,7 +1081,7 @@ section {
   box-shadow: 0 4px 12px rgba(243, 112, 33, 0.25);
 }
 
-.meu-role-item strong {
+.meu-proceso-item strong {
   display: block;
   font-size: 16px;
   font-weight: 700;
@@ -1089,7 +1089,7 @@ section {
   margin-bottom: 4px;
 }
 
-.meu-role-item span {
+.meu-proceso-item span {
   font-size: 14px;
   color: var(--text-light-mute);
   line-height: 1.6;
@@ -1692,7 +1692,7 @@ section {
   .meu-head-split,
   .meu-intro-grid,
   .meu-dim-layout,
-  .meu-role-panel.active,
+  .meu-proceso-panel.active,
   .meu-posgrado-grid {
     grid-template-columns: 1fr;
   }
