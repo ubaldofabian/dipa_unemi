@@ -82,6 +82,6 @@ window.DIPA_DATA = {
     { num: "120+", label: "Instrumentos académicos vigentes" },
     { num: "9", label: "Facultades acompañadas" },
     { num: "1.8K", label: "Docentes con soporte pedagógico" },
-    { num: "2026", label: "Modelo educativo institucional" },
+    { num: "2026", label: "Modelo Educativo institucional" },
   ],
 };

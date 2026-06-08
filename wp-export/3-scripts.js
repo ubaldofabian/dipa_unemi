@@ -340,7 +340,7 @@
       });
     })();
 
-    // ===== Descarga / Ver online del PDF del Modelo educativo =====
+    // ===== Descarga / Ver online del PDF del Modelo Educativo =====
     (function () {
       var PDF = 'https://www.unemi.edu.ec/wp-content/uploads/2026/06/Propuesta-Modelo-Educativo-UNEMI-2026-JUNIO.pdf';
       var ONLINE = 'https://heyzine.com/flip-book/857143c17d.html';
