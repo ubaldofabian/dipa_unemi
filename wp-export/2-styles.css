@@ -1745,7 +1745,7 @@ section {
       left: 0 !important;
       width: 100% !important;
       height: 100% !important;
-      background: rgba(0, 35, 52, 0.72) !important;
+      background: rgba(0, 35, 52, 0.85) !important;
       z-index: 2 !important;
       margin: 0 !important;
       padding: 0 !important;
@@ -2733,7 +2733,7 @@ section {
       line-height: 1.02 !important;
       margin: 0 0 20px !important;
       max-width: none !important;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+      text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.20);
     }
 
     .meu-hero-bar {
