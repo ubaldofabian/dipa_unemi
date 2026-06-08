@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93352d47-f25f-4ea2-913a-4076b22dfc58" name="Changes" comment="fix header video without letter">
+    <list default="true" id="93352d47-f25f-4ea2-913a-4076b22dfc58" name="Changes" comment="fix header title color">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-export/2-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/2-styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-export/2-styles.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/2-styles.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-export/TODO-min.html" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/TODO-min.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-export/TODO-pagina.html" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/TODO-pagina.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-export/_overrides.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-export/_overrides.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-export/bloque-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-export/bloque-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-export/bloque-3.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780696028186</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix header title color">
+      <option name="closed" value="true" />
+      <created>1780926536856</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1780926536856</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +218,7 @@
     <MESSAGE value="change card name" />
     <MESSAGE value="change header video without letter" />
     <MESSAGE value="fix header video without letter" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix header video without letter" />
+    <MESSAGE value="fix header title color" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix header title color" />
   </component>
 </project>
