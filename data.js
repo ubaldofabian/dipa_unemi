@@ -28,7 +28,7 @@ window.DIPA_DATA = {
     {
       sigla: "SGC",
       letra: "S",
-      titulo: "Competencias Genéricas",
+      titulo: "Competencias genéricas",
       desc: "Sello común de todo estudiante: pensamiento crítico-creativo, aprendizaje continuo, comunicación efectiva y ciudadanía digital.",
       tags: ["Pensamiento crítico", "Aprendizaje continuo", "Ciudadanía digital"],
     },
