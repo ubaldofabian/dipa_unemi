@@ -95,6 +95,7 @@ function AHero() {
             Innovación<br />
             <span style={{ color: A_ORANGE, fontStyle: "italic" }}>académica</span><br />
             por <u style={{ textDecorationThickness: 4, textUnderlineOffset: 12, textDecorationColor: A_INK }}>diseño</u>.
+            <span style={{ display: "inline-block", marginLeft: 12, fontSize: 18, color: A_MUTED, fontWeight: 700 }}>— Cambios</span>
           </h1>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 56, paddingTop: 32, borderTop: `1px solid #e0e0e0` }}>

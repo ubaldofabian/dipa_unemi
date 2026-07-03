@@ -70,6 +70,7 @@ function EHero() {
             los procesos<br />
             académicos con<br />
             <em style={{ color: E_ORANGE, fontStyle: "italic" }}>visión pedagógica.</em>
+            <span style={{ display: "inline-block", marginLeft: 8, fontSize: 14, color: E_MUTED, fontWeight: 700 }}>— Cambios</span>
           </h1>
         </div>
         <div style={{ paddingBottom: 14 }}>

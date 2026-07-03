@@ -108,6 +108,7 @@ function SHero() {
           Innovación que<br />
           <span style={{ color: S_ORANGE }}>transforma</span> la<br />
           academia.
+          <span style={{ display: "inline-block", marginLeft: 10, fontSize: 16, color: S_GRAY, fontWeight: 700 }}>— Cambios</span>
         </h1>
 
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", maxWidth: 600, marginTop: 36, lineHeight: 1.6 }}>
