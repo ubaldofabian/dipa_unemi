@@ -5150,6 +5150,128 @@
       color: #ffffff !important;
     }
 
+    /* Estilo para Modalidades y Perfil de egreso (alineado a la estética del sitio) */
+    #me-modalidad .meu-modalidad-tiles {
+      display: grid !important;
+      grid-template-columns: repeat(5, 1fr) !important;
+      gap: 16px !important;
+      margin-top: 48px !important;
+    }
+
+    #me-modalidad .meu-modalidad-tile {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 14px !important;
+      text-align: center !important;
+      padding: 30px 16px !important;
+      background: #ffffff !important;
+      border: 1px solid var(--line-light) !important;
+      transition: all .3s !important;
+    }
+
+    #me-modalidad .meu-modalidad-tile:hover {
+      transform: translateY(-6px) !important;
+      border-color: var(--orange) !important;
+      box-shadow: 0 20px 40px rgba(0, 35, 52, 0.1) !important;
+    }
+
+    #me-modalidad .meu-modalidad-tile i {
+      width: 52px !important;
+      height: 52px !important;
+      display: grid !important;
+      place-items: center !important;
+      background: var(--navy) !important;
+      color: var(--gold) !important;
+      font-size: 20px !important;
+    }
+
+    #me-modalidad .meu-modalidad-tile span {
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.01em !important;
+      color: var(--text-on-light) !important;
+    }
+
+    #me-modalidad .meu-perfil-subhead {
+      margin-top: 72px !important;
+      padding-top: 40px !important;
+      border-top: 1px solid var(--line-light) !important;
+    }
+
+    #me-modalidad .meu-perfil-subhead .meu-step-mono {
+      display: block !important;
+      color: var(--orange) !important;
+      margin-bottom: 10px !important;
+    }
+
+    #me-modalidad .meu-perfil-subhead h3 {
+      font-size: 24px !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.015em !important;
+      color: var(--text-on-light) !important;
+    }
+
+    #me-modalidad .meu-perfil-grid-3 {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 24px !important;
+      margin-top: 32px !important;
+    }
+
+    #me-modalidad .meu-perfil-card3 {
+      background: #ffffff !important;
+      border: 1px solid var(--line-light) !important;
+      padding: 36px 32px !important;
+      transition: all .3s !important;
+    }
+
+    #me-modalidad .meu-perfil-card3:hover {
+      transform: translateY(-6px) !important;
+      border-color: var(--orange) !important;
+      box-shadow: 0 20px 40px rgba(0, 35, 52, 0.1) !important;
+    }
+
+    #me-modalidad .meu-perfil-card3-num {
+      font-size: 40px !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.03em !important;
+      color: var(--orange) !important;
+      line-height: 1 !important;
+      margin-bottom: 18px !important;
+    }
+
+    #me-modalidad .meu-perfil-card3 h4 {
+      font-size: 17px !important;
+      font-weight: 800 !important;
+      line-height: 1.3 !important;
+      color: var(--text-on-light) !important;
+      margin-bottom: 12px !important;
+    }
+
+    #me-modalidad .meu-perfil-card3 p {
+      font-size: 14px !important;
+      color: var(--text-light-dim) !important;
+      line-height: 1.7 !important;
+    }
+
+    @media (max-width: 980px) {
+      #me-modalidad .meu-modalidad-tiles {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      #me-modalidad .meu-perfil-grid-3 {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      #me-modalidad .meu-modalidad-tiles {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
     /* Galería: tile de video destacado (fondo en bucle, clic = abrir con sonido) */
     .meu-galeria-video {
       cursor: pointer;
@@ -5541,6 +5663,7 @@
         <a href="#me-dimensiones">Dimensiones</a>
         <a href="#me-competencias">Competencias</a>
         <a href="#me-proceso">Roles</a>
+        <a href="#me-modalidad">Modalidades y perfil</a>
         <a href="#me-posgrado">Posgrado</a>
         <a href="#me-arquitectura">Arquitectura</a>
         <a href="#me-pilares">Evaluación</a>
@@ -5563,6 +5686,7 @@
       <a href="#me-dimensiones">Dimensiones</a>
       <a href="#me-competencias">Competencias</a>
       <a href="#me-proceso">Roles</a>
+      <a href="#me-modalidad">Modalidades y perfil</a>
       <a href="#me-posgrado">Posgrado</a>
       <a href="#me-arquitectura">Arquitectura</a>
       <a href="#me-pilares">Evaluación</a>
@@ -5652,17 +5776,15 @@
                 <div class="dim-card-front">
                   <div class="dim-card-num">01</div>
                   <div class="dim-card-icon"><i class="fas fa-graduation-cap"></i></div>
-                  <h3>Pedagógica</h3>
+                  <h3>Pedagógica y Andragógica</h3>
                   <p class="dim-card-hint">▾ Clic para ver más</p>
                 </div>
                 <div class="dim-card-back">
                   <div class="dim-card-back-label">DIMENSIÓN 01 / 08</div>
-                  <h3>Pedagógica</h3>
-                  <p>Promueve metodologías activas como aprendizaje basado en proyectos, gamificación,
-                    aprendizaje-servicio y estudio de casos. Integra teoría, práctica y reflexión crítica.</p>
+                  <h3>Pedagógica y Andragógica</h3>
+                  <p>Consolida metodologías activas, evaluación auténtica y aprendizaje profundo para desarrollar pensamiento crítico, creatividad y compromiso social.</p>
                   <div class="dim-card-tags">
-                    <span>ABP</span><span>Gamificación</span><span>Aprendizaje-Servicio</span><span>Estudio de
-                      casos</span><span>Aula invertida</span>
+                    <span>ABP</span><span>Gamificación</span><span>Aprendizaje-Servicio</span><span>Aula invertida</span><span>Evaluación auténtica</span>
                   </div>
                 </div>
               </div>
@@ -5680,11 +5802,9 @@
                 <div class="dim-card-back">
                   <div class="dim-card-back-label">DIMENSIÓN 02 / 08</div>
                   <h3>Curricular</h3>
-                  <p>Organiza una estructura flexible y pertinente, con equivalencia de calidad en las modalidades
-                    presencial, semipresencial, en línea e híbrida. Define los tres niveles del currículo.</p>
+                  <p>Define un currículo flexible y articulado para todas las modalidades: presencial, semipresencial, dual, en línea e híbrida, asegurando coherencia, pertinencia y calidad equivalente.</p>
                   <div class="dim-card-tags">
-                    <span>Flexibilidad</span><span>Modalidad híbrida</span><span>Sistema de créditos</span><span>Malla
-                      curricular</span>
+                    <span>Flexibilidad</span><span>Equivalencia</span><span>Modalidad dual</span><span>Créditos</span><span>Malla curricular</span>
                   </div>
                 </div>
               </div>
@@ -5696,17 +5816,15 @@
                 <div class="dim-card-front">
                   <div class="dim-card-num">03</div>
                   <div class="dim-card-icon"><i class="fas fa-microscope"></i></div>
-                  <h3>Investigación e Innovación</h3>
+                  <h3>Investigación e innovación con propósito</h3>
                   <p class="dim-card-hint">▾ Clic para ver más</p>
                 </div>
                 <div class="dim-card-back">
                   <div class="dim-card-back-label">DIMENSIÓN 03 / 08</div>
-                  <h3>Investigación e Innovación</h3>
-                  <p>Fortalece la investigación formativa, los proyectos integradores, la innovación y la resolución de
-                    problemas del entorno social, productivo y científico.</p>
+                  <h3>Investigación e innovación con propósito</h3>
+                  <p>Fortalece la investigación formativa y los proyectos aplicados con una orientación clara hacia la solución de problemas reales y el impacto social.</p>
                   <div class="dim-card-tags">
-                    <span>Investigación formativa</span><span>Proyectos
-                      integradores</span><span>Innovación</span><span>Resolución de problemas</span>
+                    <span>Investigación formativa</span><span>Proyectos con propósito</span><span>Innovación</span><span>Impacto social</span>
                   </div>
                 </div>
               </div>
@@ -5724,11 +5842,9 @@
                 <div class="dim-card-back">
                   <div class="dim-card-back-label">DIMENSIÓN 04 / 08</div>
                   <h3>Vinculación y Responsabilidad Social</h3>
-                  <p>Concibe el territorio como aula y promueve prácticas preprofesionales, proyectos comunitarios y
-                    transferencia de conocimiento hacia la sociedad.</p>
+                  <p>Vincula el aprendizaje con el contexto local y global para generar impacto social mediante prácticas, proyectos comunitarios y transferencia de conocimiento.</p>
                   <div class="dim-card-tags">
-                    <span>Territorio como aula</span><span>Proyectos
-                      comunitarios</span><span>Prácticas</span><span>Transferencia</span>
+                    <span>Territorio aula</span><span>Proyectos sociales</span><span>Prácticas</span><span>Transferencia</span>
                   </div>
                 </div>
               </div>
@@ -5746,11 +5862,9 @@
                 <div class="dim-card-back">
                   <div class="dim-card-back-label">DIMENSIÓN 05 / 08</div>
                   <h3>Organizacional y de Gestión</h3>
-                  <p>Asegura una gobernanza académica eficiente, transparente y orientada a la calidad, con procesos
-                    claros de planificación y rendición de cuentas.</p>
+                  <p>Fortalece procesos institucionales colaborativos, transparentes y ágiles que sostienen la implementación y la mejora continua del modelo.</p>
                   <div class="dim-card-tags">
-                    <span>Gobernanza</span><span>Transparencia</span><span>Planificación</span><span>Rendición de
-                      cuentas</span>
+                    <span>Gobernanza</span><span>Transparencia</span><span>Planificación</span><span>Mejora continua</span>
                   </div>
                 </div>
               </div>
@@ -5768,11 +5882,9 @@
                 <div class="dim-card-back">
                   <div class="dim-card-back-label">DIMENSIÓN 06 / 08</div>
                   <h3>Internacionalización</h3>
-                  <p>Integra movilidad académica, redes de cooperación, internacionalización del currículo, intercambio
-                    de experiencias y centros de apoyo dentro y fuera del país.</p>
+                  <p>Amplía la formación con movilidad, redes globales y un currículo intercultural que conecta a estudiantes y docentes con experiencias internacionales.</p>
                   <div class="dim-card-tags">
-                    <span>Movilidad académica</span><span>Redes de cooperación</span><span>Currículo
-                      global</span><span>Intercambio</span>
+                    <span>Movilidad</span><span>Cooperación</span><span>Currículo global</span><span>Intercambio</span>
                   </div>
                 </div>
               </div>
@@ -5784,17 +5896,15 @@
                 <div class="dim-card-front">
                   <div class="dim-card-num">07</div>
                   <div class="dim-card-icon"><i class="fas fa-robot"></i></div>
-                  <h3>Tecnológica e Innovadora</h3>
+                  <h3>Tecnológica y transformación digital</h3>
                   <p class="dim-card-hint">▾ Clic para ver más</p>
                 </div>
                 <div class="dim-card-back">
                   <div class="dim-card-back-label">DIMENSIÓN 07 / 08</div>
-                  <h3>Tecnológica e Innovadora</h3>
-                  <p>Impulsa competencias digitales, analítica de datos, tecnologías emergentes y uso ético de
-                    inteligencia artificial como mediación pedagógica al servicio del aprendizaje.</p>
+                  <h3>Tecnológica y transformación digital</h3>
+                  <p>Impulsa el uso estratégico de tecnologías, datos y herramientas digitales para transformar procesos de enseñanza, aprendizaje y gestión.</p>
                   <div class="dim-card-tags">
-                    <span>Competencias digitales</span><span>Analítica de datos</span><span>IA
-                      ética</span><span>Tecnologías emergentes</span>
+                    <span>Transformación digital</span><span>Competencias digitales</span><span>Datos</span><span>Innovación tecnológica</span>
                   </div>
                 </div>
               </div>
@@ -5812,11 +5922,9 @@
                 <div class="dim-card-back">
                   <div class="dim-card-back-label">DIMENSIÓN 08 / 08</div>
                   <h3>Aseguramiento de la Calidad</h3>
-                  <p>Orienta la evaluación continua, la mejora permanente y la rendición de cuentas, con estándares
-                    nacionales e internacionales y uso de evidencias para la toma de decisiones.</p>
+                  <p>Garantiza evaluación constante, evidencia sistemática y procesos de acreditación orientados a la mejora del aprendizaje y la confianza institucional.</p>
                   <div class="dim-card-tags">
-                    <span>Evaluación continua</span><span>Mejora
-                      permanente</span><span>Estándares</span><span>Evidencias</span>
+                    <span>Evaluación continua</span><span>Evidencias</span><span>Acreditación</span><span>Mejora</span>
                   </div>
                 </div>
               </div>
@@ -6416,6 +6524,63 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALIDAD Y PERFIL DINÁMICO -->
+  <section class="meu-section meu-section--light" id="me-modalidad">
+    <div class="meu-container">
+      <div class="meu-section-head center">
+        <span class="meu-label">Macrocurrículo</span>
+        <h2 class="meu-h2">Modalidades y <span class="orange">perfil de egreso</span></h2>
+        <p class="meu-lead" style="margin: 20px auto 0">La UNEMI flexibiliza su ecosistema educativo garantizando equivalencia de calidad en todas sus modalidades oficiales, mientras el perfil de egreso guía el diseño curricular, la progresión formativa y la evaluación del aprendizaje.</p>
+      </div>
+
+      <div class="meu-modalidad-tiles">
+        <div class="meu-modalidad-tile">
+          <i class="fas fa-building-columns"></i>
+          <span>Presencial</span>
+        </div>
+        <div class="meu-modalidad-tile">
+          <i class="fas fa-shuffle"></i>
+          <span>Semipresencial</span>
+        </div>
+        <div class="meu-modalidad-tile">
+          <i class="fas fa-laptop"></i>
+          <span>En línea</span>
+        </div>
+        <div class="meu-modalidad-tile">
+          <i class="fas fa-diagram-project"></i>
+          <span>Híbrida</span>
+        </div>
+        <div class="meu-modalidad-tile">
+          <i class="fas fa-briefcase"></i>
+          <span>Dual</span>
+        </div>
+      </div>
+
+      <div class="meu-perfil-subhead">
+        <span class="meu-step-mono" style="text-align:left">FIGURA 11 · MODELO EDUCATIVO UNEMI</span>
+        <h3>El perfil de egreso, guía del currículo</h3>
+      </div>
+
+      <div class="meu-perfil-grid-3">
+        <article class="meu-perfil-card3">
+          <div class="meu-perfil-card3-num">01</div>
+          <h4>Diseño curricular y resultados de aprendizaje</h4>
+          <p>Cada asignatura, módulo y unidad temática se diseña para contribuir de manera directa al desarrollo progresivo de las competencias del perfil.</p>
+        </article>
+        <article class="meu-perfil-card3">
+          <div class="meu-perfil-card3-num">02</div>
+          <h4>Progresión formativa</h4>
+          <p>Las competencias se articulan a lo largo de la trayectoria académica, desde los fundamentos iniciales hasta la aplicación avanzada en contextos reales o simulados.</p>
+        </article>
+        <article class="meu-perfil-card3">
+          <div class="meu-perfil-card3-num">03</div>
+          <h4>Evaluación del aprendizaje</h4>
+          <p>Permite evidenciar la capacidad del estudiante para integrar teoría, práctica y valores en situaciones profesionales y sociales.</p>
+        </article>
       </div>
     </div>
   </section>
